@@ -1,0 +1,87 @@
+# =========================================================================		
+# Copyright 2017 T-Mobile USA, Inc.		
+# 		
+# Licensed under the Apache License, Version 2.0 (the "License");		
+# you may not use this file except in compliance with the License.		
+# You may obtain a copy of the License at		
+#		
+#    http://www.apache.org/licenses/LICENSE-2.0		
+#		
+# Unless required by applicable law or agreed to in writing, software		
+# distributed under the License is distributed on an "AS IS" BASIS,		
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.		
+# See the License for the specific language governing permissions and		
+# limitations under the License.		
+# =========================================================================		
+
+###########################################################################
+#                            Auth Backend                                 #
+###########################################################################
+
+# Allowed values for AUTH_BACKEND are userpass, ldap
+AUTH_BACKEND=userpass
+ENABLE_AWS=yes
+
+###########################################################################
+#                      LDAP Credentials                                   #
+###########################################################################
+
+#LDAP_URL='ldap://---'
+#LDAP_GROUP_ATTR_NAME='cn'
+#LDAP_USR_ATTR_NAME='---'
+#USER_DN=''
+#GROUP_DN=''
+#BIND_DN='---'
+#BIND_DN_PASS='---'
+#TLS_ENABLED='false'
+#VAULT_ADMIN_GROUP='---'
+#SAFE_ADMIN_GROUP='---'
+
+## The value for USE_UPNDOMAIN is either 'yes' or 'no'
+#USE_UPNDOMAIN='yes'
+#UPN_DOMAIN_URL='---'
+
+##########################################################################
+#                        Storage Backend                                 #
+##########################################################################
+# The possible values are 'File System' or 'Consul'
+BACKEND='File System'
+
+
+##########################################################################
+#                         Consul Parameters                              #
+##########################################################################
+
+CONSUL_DATACENTER='dc1'
+#CONSUL_ENCRYPT=''
+CONSUL_RETRY_JOIN=''
+
+CONSUL_STORAGE_ADDRESS='ipaddress:8500'
+CONSUL_STORAGE_PATH='t-vault/t-vault'
+CONSUL_STORAGE_SERVICE_NAME='t-vault'
+
+##########################################################################
+#                       Global                                           #
+##########################################################################
+SELF_SIGNED='y'
+##########################################################################
+#                         DynamoDB Parameters                            #
+##########################################################################
+
+#AWS_DYNAMODB_TABLE='t-vault'
+#AWS_DEFAULT_REGION='us-west-2'
+
+##########################################################################
+#                             EMAIL IDs                                  #
+##########################################################################
+
+#EMAIL1='---'
+#EMAIL2='---'
+#EMAIL3='---'
+#EMAIL4='---'
+#EMAIL5='---'
+
+##########################################################################
+#                             S3 Location                                #
+##########################################################################
+

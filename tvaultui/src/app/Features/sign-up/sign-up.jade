@@ -1,0 +1,35 @@
+header.signin
+sideBar
+script(type='text/ng-template', id='error.html')
+    .row
+        .top-lg-sep
+            .common-header-label.text-center Error
+        .top-lg-sep.notification-text {{errorMessage}}
+    
+    .text-center.bottom-lg-sep.top-lg-sep.notification-button
+        .clearfix.bottom-sm-sep
+            button.common-btn.btn.btn-primary.btn-lg(ng-click="close()") Close
+
+.container-fluid.sign-in
+    .container-fluid-wrapper.container-fluid-wrapper-signin
+        loading-state(ng-show="isLoadingData" ng-cloak="")
+        .form-wrapper
+            .sign-in-icon-container.clearfix
+                .sign-in-image 
+                    img(src= "assets/images/signin.png")
+            form(ng-show="!isLoadingData" name="authenticate" ng-submit="login()")
+                .form-group
+                    label(for="usr") Corp ID
+                    input(class="form-control input-box-style" id="usr" placeholder="Enter your Corp ID" ng-model="username" required)
+                .form-group.extra-margin-actions
+                    label(for="pwd") Password
+                    //- span.input-clipper    
+
+                    input(type="password" class="form-control input-box-style" id="pwd" placeholder="Enter your password" ng-model="password" autocomplete="new-password" required)
+
+                .button-container
+                    button.btn.btn-primary.btn-lg.login-button(type="submit") Login
+
+            .center-text.forgot-pwd 
+                //- TO-BE-UPDATED : To uncommented later when the feature is decided upon
+                //- a.link-style(href='{{forgotPasswordLink}}' target="_blank") Forgot Password?

@@ -1,0 +1,531 @@
+[
+  {"#":"Health Check ",
+    
+    	"apiEndPoint":"/health",
+    	"vaultEndPoint":"https://localhost:8200/v1/sys/health",
+    	"method":"GET"
+    },
+    {"#":"Unseal",
+    
+    	"apiEndPoint":"/unseal",
+    	"vaultEndPoint":"https://<serverip>:<port>/v1/sys/unseal",
+    	"method":"POST",
+    	"params":[
+        	{"name":"serverip","required":true,"appendToPath":true},
+        	{"name":"port","required":true,"appendToPath":true},
+        	{"name":"key","required":true},
+        	{"name":"reset"}
+        ],
+      	"outparams":["sealed","progress"]
+    },
+    {"#":"Unseal Progress",
+    
+    	"apiEndPoint":"/unseal-progress",
+    	"vaultEndPoint":"https://<serverip>:<port>/v1/sys/seal-status",
+    	"method":"GET",
+    	"params":[
+        	{"name":"serverip","required":true,"appendToPath":true},
+        	{"name":"port","required":true,"appendToPath":true}
+        ],
+      	"outparams":["sealed","progress"]
+    },
+    
+    	
+	
+	{"#" : "**** - dec'2017 - AppRole Create *****",
+   	"apiEndPoint":"/auth/approle/role/create",
+    	"vaultEndPoint":"/auth/approle/role/<role_name>",
+    	"method":"POST",
+      	"params":[
+      		{"name":"role_name", "required":true, "appendToPath":true},
+      		{"name":"policies" },
+      		{"name":"bind_secret_id","value":"true"},
+      		{"name":"bound_cidr_list"},
+      		{"name":"secret_id_num_uses "},
+      		{"name":"secret_id_ttl"},
+      		{"name":"token_num_uses", "value":"0"}
+        ]
+        
+    },
+    
+  	
+  	{"#":"**** - dec'2017 - Read a AppRole *******",
+    
+    	"apiEndPoint":"/auth/approle/role/read",
+    	"vaultEndPoint":"/auth/approle/role/<role_name>",
+    	"method":"GET",
+      	"params":[
+      		{"name":"role_name", "required":true, "appendToPath":true}
+        ],
+                "outparams":["data"]
+        
+    },
+ 
+ 	
+  	{"#":"**** - dec'2017 - Read a AppRole RoleID*******",
+    
+    	"apiEndPoint":"/auth/approle/role/readRoleID",
+    	"vaultEndPoint":"/auth/approle/role/<role_name>/role-id",
+    	"method":"GET",
+      	"params":[
+      		{"name":"role_name", "required":true, "appendToPath":true}
+        ],
+                "outparams":["data"]
+        
+    },
+ 
+
+   {"#":"**** - dec'2017 - delete a AppRole *******",
+    
+    	"apiEndPoint":"/auth/approle/role/delete",
+    	"vaultEndPoint":"/auth/approle/role/<role_name>",
+    	"method":"DELETE",
+      	"params":[
+      		{"name":"role_name", "required":true, "appendToPath":true}
+        ]
+    },
+  
+	
+	{"#" : "**** - dec'2017 - Create secret Id for Approle'****** ",
+   	"apiEndPoint":"/auth/approle/secretid/create",
+    	"vaultEndPoint":"/auth/approle/role/<role_name>/secret-id",
+    	"method":"POST", 
+      	"params":[
+      		{"name":"role_name", "required":true, "appendToPath":true},
+			{"name":"data","required":true},
+            {"name":"cidr_list"}
+        ],
+                "outparams":["data"]
+        
+    },
+    
+  	{"#":"**** - dec'2017 - Read SecretID for AppRole*******",
+    
+    	"apiEndPoint":"/auth/approle/secretid/lookup",
+    	"vaultEndPoint":"/auth/approle/role/<role_name>/secret-id",
+    	"method":"POST",
+      	"params":[
+      		{"name":"role_name", "required":true, "appendToPath":true}
+        ],
+                "outparams":["data"]
+        
+    },
+ 
+	  {"#":"**** - dec'2017 - Destroy  for AppRoler AppRole*******",
+    
+    	"apiEndPoint":"/auth/approle/secret/delete",
+    	"vaultEndPoint":"/auth/approle/role/<role_name>/secret-id/destroy",
+    	"method":"POST",
+      	"params":[
+      		{"name":"role_name", "required":true, "appendToPath":true},
+      		{"name":"secret_id", "required":true}
+        ]
+    },
+  
+{"#" : "**** - dec'2017 - AppRole login  '****** ",
+ 	
+    	"apiEndPoint":"/auth/approle/login",
+    	"vaultEndPoint":"/auth/approle/login",
+    	"method":"POST",
+      	"params":[
+        		{"name":"role_id", "required":true}, 
+    	  		{"name":"secret_id","required":true}
+ 	    ],
+        "outparams":["auth","data","lease_duration", "lease_id"]
+    },
+
+ 	
+	
+	
+	
+	
+	{"#" : "**** - dec'2017 - Simple User Password login for simple users *******",
+ 	
+    	"apiEndPoint":"/auth/userpass/login",
+    	"vaultEndPoint":"/auth/userpass/login/<username>",
+    	"method":"POST",
+      	"params":[
+        		{"name":"username", "required":true,"appendToPath":true}, 
+    	  		{"name":"password","required":true}
+ 	    ],
+       "outparams":["auth/client_token","admin","access","auth/policies"] 
+    },
+
+   
+     {"#":"**** - dec'2017 - Create / Update a USER *******",
+    
+    	"apiEndPoint":"/auth/userpass/create",
+    	"vaultEndPoint":"/auth/userpass/users/<username>",
+    	"method":"POST",
+      	"params":[
+      		{"name":"username", "required":true, "appendToPath":true},
+      		{"name":"password","required":true},
+      		{"name":"policies","required":true}
+        ]
+    },
+  
+  
+     {"#":"**** - dec'2017 - Read a USER *******",
+    
+    	"apiEndPoint":"/auth/userpass/read",
+    	"vaultEndPoint":"/auth/userpass/users/<username>",
+    	"method":"GET",
+      	"params":[
+      		{"name":"username", "required":true, "appendToPath":true}
+        ],
+                "outparams":["data"]
+        
+    },
+  
+    {"#":"**** - dec'2017 - delete a USER *******",
+    
+    	"apiEndPoint":"/auth/userpass/delete",
+    	"vaultEndPoint":"/auth/userpass/users/<username>",
+    	"method":"DELETE",
+      	"params":[
+      		{"name":"username", "required":true, "appendToPath":true}
+        ]
+    },
+  
+	{"#" : "**** - dec'2017 - UPDATE Password for a USER '****** ",
+ 	
+    	"apiEndPoint":"/auth/userpass/update",
+    	"vaultEndPoint":"/auth/userpass/users/<username>/password",
+    	"method":"POST",
+      	"params":[
+        		{"name":"username", "appendToPath":true}, 
+    	  		{"name":"password","required":true}
+ 	    ],
+        "outparams":["password"]
+    },
+
+   
+	{"#" : "**** - dec'2017 - UPDATE POLICIES for a USER '****** ",
+ 	
+    	"apiEndPoint":"/auth/userpass/updatepolicy",
+    	"vaultEndPoint":"/auth/userpass/users/<username>",
+    	"method":"POST",
+      	"params":[
+        		{"name":"username", "appendToPath":true}, 
+    	  		{"name":"policies","required":true}
+ 	    ],
+ 	    	"outparams":["policies"]
+  
+    },
+
+	{"#" : "**** - dec'2017 - LIST USERS '****** ",
+ 	
+    	"apiEndPoint":"/auth/userpass/list",
+    	"vaultEndPoint":"/auth/userpass/users?list=true",
+    	"method":"GET",
+ 	"outparams":["data"]
+    },
+   
+   
+   
+    
+	{"#":"LDAP Login ",
+	
+    	"apiEndPoint":"/auth/ldap/login",
+    	"vaultEndPoint":"/auth/ldap/login/<username>",
+    	"method":"POST",
+      	"params":[
+        	{"name":"username","required":true,"appendToPath":true},
+        	{"name":"password","required":true}
+        ],
+        "outparams":["auth/client_token","admin","access","auth/policies"]
+	},
+	
+	{"#":"Configuring LDAP Group",
+    
+    	"apiEndPoint":"/auth/ldap/groups/configure",
+    	"vaultEndPoint":"/auth/ldap/groups/<groupname>",
+    	"method":"POST",
+      	"params":[
+        	{"name":"groupname","required":true,"appendToPath":true},
+        	{"name":"policies","required":true}
+        ]
+	},
+	{"#":"**** Listing all LDAP Groups************",
+    
+    	"apiEndPoint":"/auth/ldap/groups/list",
+    	"vaultEndPoint":"/auth/ldap/groups?list=true",
+    	"method":"GET",
+      	"outparams":["data/keys"]
+	},
+	
+	{"#":"**** Fetch details of a configured LDAP group *****",
+	
+    	"apiEndPoint":"/auth/ldap/groups",
+    	"vaultEndPoint":"/auth/ldap/groups/<groupname>",
+    	"method":"GET",
+    	"params":[
+        	{"name":"groupname","required":true, "appendToPath":true}
+        ],
+      	"outparams":["data"]
+	},
+	
+	{"#":"**** Deleting a LDAP Group  *****",
+	
+    	"apiEndPoint":"/auth/ldap/groups/delete",
+    	"vaultEndPoint":"/auth/ldap/groups/<groupname>",
+    	"method":"DELETE",
+    	"params":[
+        	{"name":"groupname","required":true, "appendToPath":true}
+        ]
+	},
+	
+	{"#":"**** Configuring an LDAP User *****",
+	
+    	"apiEndPoint":"/auth/ldap/users/configure",
+    	"vaultEndPoint":"/auth/ldap/users/<username>",
+    	"method":"POST",
+      	"params":[
+        	{"name":"username","required":true,"appendToPath":true},
+        	{"name":"policies"},
+        	{"name":"groups" }
+        ]
+	},
+	
+	{"#":"**** List all LDAP Users configured in vault *****",
+	
+    	"apiEndPoint":"/auth/ldap/users/list",
+    	"vaultEndPoint":"/auth/ldap/users?list=true",
+    	"method":"GET",
+      	"outparams":["data/keys"]
+	},
+	
+	{"#":"**** Fetch details of a configured LDAP user *****",
+	
+    	"apiEndPoint":"/auth/ldap/users",
+    	"vaultEndPoint":"/auth/ldap/users/<username>",
+    	"method":"GET",
+    	"params":[
+        	{"name":"username","required":true, "appendToPath":true}
+        ],
+      	"outparams":["data"]
+	},
+	
+	{"#":"**** Deleting a LDAP User  *****",
+	
+    	"apiEndPoint":"/auth/ldap/users/delete",
+    	"vaultEndPoint":"/auth/ldap/users/<username>",
+    	"method":"DELETE",
+    	"params":[
+        	{"name":"username","required":true, "appendToPath":true}
+        ]
+	},
+	
+    {"#":"**** Reading a secret  *****",
+    	"apiEndPoint":"/read",
+    	"vaultEndPoint":"/<path>",
+    	"method":"GET",
+      	"params":[
+        	{"name":"path","required":true, "appendToPath":true}
+        ],
+        "outparams":["data"]
+    },
+    
+     {"#":"**** Writing a secret  *****",
+    	"apiEndPoint":"/write",
+    	"vaultEndPoint":"/<path>",
+    	"method":"POST",
+      	"params":[
+        	{"name":"path","required":true, "appendToPath":true},
+        	{"name":"data","required":true}
+        ]
+    },
+     {"#":"**** Create SDB  *****",
+    	"apiEndPoint":"/sdb/create",
+    	"vaultEndPoint":"/<path>",
+    	"method":"POST",
+      	"params":[
+        	{"name":"path","required":true, "appendToPath":true},
+        	{"name":"data","required":true}
+        ]
+    },
+     {"#":"**** Create SDB  *****",
+    	"apiEndPoint":"/sdb/update",
+    	"vaultEndPoint":"/<path>",
+    	"method":"POST",
+      	"params":[
+        	{"name":"path","required":true, "appendToPath":true},
+        	{"name":"data","required":true}
+        ]
+    },
+    
+    {"#":"Deleting an exisiing SDB",
+    
+    	"apiEndPoint":"/sdb/delete",
+    	"vaultEndPoint":"/<path>",
+    	"method":"POST",
+      	"params":[
+        	{"name":"path","required":true, "appendToPath":true}
+        ]
+    }
+    ,
+    {"#":"Getting SDB Info",
+    
+    	"apiEndPoint":"/sdb",
+    	"vaultEndPoint":"/<path>",
+    	"method":"GET",
+      	"params":[
+        	{"name":"path","required":true, "appendToPath":true}
+        ],
+        "outparams":["data"]
+    }
+    ,
+    
+     {"#":"**** Listing all SDBs *****",
+    	"apiEndPoint":"/sdb/list",
+    	"vaultEndPoint":"/<path>?list=true",
+    	"method":"GET",
+      	"params":[
+        	{"name":"path","required":true, "appendToPath":true}
+        ],
+         "outparams":["data/keys"]
+    },
+    { "#":"**** Deleting a secret  *****",
+    	"apiEndPoint":"/delete",
+    	"vaultEndPoint":"/<path>",
+    	"method":"DELETE",
+      	"params":[
+        	{"name":"path","required":true, "appendToPath":true}
+        ]
+    },
+    {"#":"Creating a policy ",
+    
+    	"apiEndPoint":"/access/create",
+    	"vaultEndPoint":"/sys/policy/<accessid>",
+    	"method":"POST",
+      	"params":[
+      		{"name":"accessid","required":true,"appendToPath":true},
+        	{"name":"access","required":false},
+        	{"name":"rules"}
+        ]
+    },
+    { "#":"****  List all policies  *****",
+    	"apiEndPoint":"/access/list",
+    	"vaultEndPoint":"/sys/policy",
+    	"method":"GET",
+         "outparams":["policies"]
+    },
+     {
+      "#":"****  Update Policy *****",
+    	"apiEndPoint":"/access/update",
+    	"vaultEndPoint":"/sys/policy/<accessid>",
+    	"method":"POST",
+      	"params":[
+      		{"name":"accessid","required":true,"appendToPath":true},
+        	{"name":"access","required":false},
+        	{"name":"rules"}
+        ]
+    },
+     { "#":"**** Fetch Policy Info  *****",
+    	"apiEndPoint":"/access",
+    	"vaultEndPoint":"/sys/policy/<accessid>",
+    	"method":"GET",
+      	"params":[
+      		{"name":"accessid","required":true,"appendToPath":true}
+        ],
+         "outparams":["name","rules"]
+    },
+    
+ 	{"#" : "**** Deleting a policy ****** ",
+ 	
+    	"apiEndPoint":"/access/delete",
+    	"vaultEndPoint":"/sys/policy/<accessid>",
+    	"method":"DELETE",
+      	"params":[
+      		{"name":"accessid","required":true,"appendToPath":true}
+        ]
+    },
+    
+ 	{"#" : "**** aws login ****** ",
+ 	
+    	"apiEndPoint":"/auth/aws/login",
+    	"vaultEndPoint":"/auth/aws/login",
+    	"method":"POST",
+      	"params":[
+      		{"name":"role","required":true},
+      		{"name":"pkcs7","required":true},
+      		{"name":"nonce"}
+        ],
+        "outparams":["auth/client_token","auth/policies","access"]
+    },
+    
+    
+ 	{"#" : "**** aws group creation ****** ",
+ 	
+    	"apiEndPoint":"/auth/aws/roles/create",
+    	"vaultEndPoint":"/auth/aws/role/<role>",
+    	"method":"POST",
+      	"params":[
+      		{"name":"auth_type","value":"ec2"},
+      		{"name":"role","required":true, "appendToPath":true},
+      		{"name":"bound_ami_id"},
+      		{"name":"bound_account_id"},
+      		{"name":"bound_region"},
+      		{"name":"bound_vpc_id"},
+      		{"name":"bound_subnet_id"},
+      		{"name":"bound_iam_role_arn"},
+      		{"name":"bound_iam_instance_profile_arn"},
+      		{"name":"policies" }
+        ]
+    },
+    
+    
+ 	{"#" : "**** aws role update ****** ",
+ 	
+    	"apiEndPoint":"/auth/aws/roles/update",
+    	"vaultEndPoint":"/auth/aws/role/<role>",
+    	"method":"POST",
+      	"params":[
+      		{"name":"auth_type","value":"ec2"},
+      		{"name":"role","required":true, "appendToPath":true},
+      		{"name":"bound_ami_id"},
+      		{"name":"bound_account_id"},
+      		{"name":"bound_region"},
+      		{"name":"bound_vpc_id"},
+      		{"name":"bound_subnet_id"},
+      		{"name":"bound_iam_role_arn"},
+      		{"name":"bound_iam_instance_profile_arn"},
+      		{"name":"policies", "required":"true"}
+        ]
+    },
+    
+    {"#" : "**** aws role delete ****** ",
+ 	
+    	"apiEndPoint":"/auth/aws/roles/delete",
+    	"vaultEndPoint":"/auth/aws/role/<role>",
+    	"method":"DELETE",
+      	"params":[
+      		{"name":"role","required":true, "appendToPath":true}
+        ]
+    },
+    
+     {"#" : "**** Fetch aws role info  ****** ",
+ 	
+    	"apiEndPoint":"/auth/aws/roles",
+    	"vaultEndPoint":"/auth/aws/role/<role>",
+    	"method":"GET",
+      	"params":[
+      		{"name":"role","required":true, "appendToPath":true}
+        ],
+         "outparams":["data/bound_account_id","data/bound_ami_id",
+         			  "data/bound_iam_instance_profile_arn",
+         			  "data/bound_iam_role_arn","data/bound_vpc_id",
+         			  "data/bound_subnet_id","data/bound_region",
+         			  "data/policies"]
+    },
+    
+    {"#" : "**** Fetch aws roles  ****** ",
+ 	
+    	"apiEndPoint":"/auth/aws/roles/list",
+    	"vaultEndPoint":"/auth/aws/roles?list=true",
+    	"method":"GET",
+         "outparams":["data/keys"]
+    }
+    
+    
+]

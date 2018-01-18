@@ -1,0 +1,117 @@
+.unseal {
+  .unseal-content-wrapper {
+    padding-top: 3rem;
+    width: 70%;
+    margin: auto;
+  }
+  .safe-detail-container-block {
+    width: 70%;
+  }
+  .details-input-group {
+    margin: auto;
+    width: 60%;
+    input {
+      // font-size: 1.2rem !important;
+      // height: 2rem;
+      font-size: 1.5vh !important;
+      height: 4vh;
+    }
+  }
+  .button-container button {
+    width: initial;
+    // font-size: 1.5rem;
+    font-size: 2vh;
+  }
+  .safe-img-container img {
+    width: 75px;
+    height: 75px;
+  }
+  .common-form-label {
+    text-align: left;
+  }
+  .unseal-success-message {
+    color: #000;
+    margin-top: 5rem;
+  }
+  .unseal-progress-wrapper {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin: 1rem 0;
+  }
+  .unseal-progress-bar {
+    position: absolute;
+    border-bottom: solid 2px $gray-lighter;
+    top: 1.4rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 90%;
+    @media #{$small-only} {
+      width: 80%;
+    }
+}
+  .unseal-progress-marker {
+    color: #000000;
+    font-size: 1.3rem;
+    .unseal-user {
+      font-family: 'Montserrat';
+    }
+  }
+  .progress-dot {
+    height: 3rem;
+    width: 3rem;
+    display: inline-block;
+    position:relative;
+    border-radius: 50%;
+    background-color: #fff;
+    outline: white 5px solid;
+
+    &.active {
+      border: 1px solid $pink;
+    }
+    &.inactive {
+      border: 1px solid $gray-lighter;
+    }
+    &.checked {
+      border: 1px solid $pink;
+      background-color: $pink;
+    }
+    .checkmark{
+      position:absolute;
+      top: 45%;
+      left: 40%;
+      transform: translateY(-50%);
+      &:after{
+        /*Add another block-level blank space*/
+        content: '';
+        display: block;
+
+        /*Make it a small rectangle so the border will create an L-shape*/
+        width: 0.75rem;
+        height: 1.5rem;
+
+        /*Add a white border on the bottom and left, creating that 'L' */
+        border: solid #fff;
+        border-width: 0 1px 1px 0;
+
+        /*Rotate the L 45 degrees to turn it into a checkmark*/
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
+
+header.unseal .user-profile {
+  display: none;
+}
+.unseal {
+  .safe-detail-container-block {
+    margin: 2vh auto;
+  }
+  .details-input-group {
+    margin: 3vh auto;
+  }
+  .unseal-progress-wrapper {
+    margin: 6vh 0;
+  }
+}

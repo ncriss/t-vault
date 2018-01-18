@@ -1,0 +1,122 @@
+/*Global*/
+
+
+//Base colors
+$primary_color : #333; //header grey and text color
+$secondary_color : #666; //secondary header blue
+$tertiary_color : #f6006e; //magenta
+$gray-light : #999;
+$gray-medium : #666;
+$gray-dark : #333;
+$white :#fff;
+$black : #000;
+$pink  : #f6006e; //magenta
+
+//Base background colors
+$primary_background_color : #fff;
+
+// border colors
+	$border_color:#cbd4df;
+	$border_color_light_grey: #eaeaea;
+
+
+$base-font-size-secondary: 12px;
+$base-font-size-medium: 12px;
+$base-font-size: 16px;
+$base-border-radius: 3px;
+$base-link-color: #2570e0;
+$base-color-dark:#333333;
+$base-color-medium:#666666;
+$base-color-light:#999999;
+$base-color-error: #cc0033;
+$base-color: #e20074;
+$base-color-dark-background: #ffffff;
+$hover-color:#2b2b2b;
+/* FONTS */
+
+$font-light: montserratLight, 'robotolight', Arial, sans-serif;
+$font-ultra-light: montserratUltraLight, 'robotolight', Arial, sans-serif;
+$font-regular: montserratregular, 'HelveticaNeue', 'robotoregular', Arial, sans-serif;
+$font-semi-bold: montserratsemibold, 'robotobold', Arial, sans-serif;
+$font-bold: montserratbold, 'robotobold', Arial, sans-serif;
+// $font-roman:'HelveticaNeue-Roman', 'HelveticaNeue', 'robotoregular', Arial, sans-serif;
+// $font-italic:'HelveticaNeue-Italic', 'Roboto', Arial, sans-serif;
+
+
+
+
+/* Buttons */
+$form-button-height: 32px;
+$form-button-border-size: 1px;
+$form-button-line-height:30px;
+$primary-button-background: #4185eb;
+$primary-button-color: #fff;
+$primary-button-border-color: #0066cc;
+$secondary-button-background:transparent;
+$sec-button-border-txt-color: #2570e0;
+$sec-button-border-txt-color-hover: #26428b;
+$sec-button-border-txt-color-active: #666;
+
+
+/* Table */
+$table-border-colour: #d7d7d7;
+$table-heading-border-size: 2px;
+$table-border-size: 1px;
+$table-blue-colour: #2570e0;
+$table-padding-size: 15px;
+/* HEADER */
+
+$header-blue-colour: #2570e0;
+$body-background-color:#e9eaed;
+/* DASHBOARD */
+
+$dashboard-gutter-right:10px;
+$dashboard-gutter-left:10px;
+$dashboard-gutter-top:10px;
+$dashboard-gutter-bottom:10px;
+$dashboard-gutter:20px;
+$chart-gray-color: #CDCDCD;
+/*ERROR*/
+
+$errror-text-color: #cc0033;
+/*Transaction Management*/
+
+$txn-background-color: #f4f5f6;
+$txn-border-color:#d7d8d8;
+
+/* FONT SIZES  */
+$font-size-extra-big : 24px;
+$font-size-big : 17px;
+$font-size-medium : 12px;
+$font-size-small : 11px;
+$icon-font-size: 20px;
+
+/* Letter spacings */
+$letter-spacing : 0.05rem;
+
+/* BUTTONS */
+
+$button-big-width: 50%;
+$button-big-height: 3rem;
+$border-radius : 5px;
+$button-big-padding : 0.5rem 1rem;
+
+
+
+/* Inputs */
+
+$input-label-margin : 0.3rem 0rem;
+$input-container-margin : 2rem 0rem;
+$input-padding : 0rem 0.5rem;
+
+/* Paddings and Spacings */
+
+$label-input-padding: 10px;
+$icon-action-link-padding: 10px;
+$text-padding-left: 15px;
+$gutterspace-top-bottom: 15px;
+
+
+/* Hover colors */
+
+$table-row-hover: #FAFAFA;

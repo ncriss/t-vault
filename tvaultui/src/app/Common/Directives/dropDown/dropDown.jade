@@ -1,0 +1,12 @@
+.select-dropdown-container(ng-class="{errorIndicator : error === true && dropdownDisable !== true}")
+    .select-box-text.no-sep
+        .btn-group(uib-dropdown='', uib-dropdown-toggle='', is-open="status.isopen")
+            button#btn-append-to-single-button.btn.btn-default(ng-click="toggleDropdown($event)", type='button' ng-disabled = "dropdownDisable")
+                | {{dropDownOptions.selectedGroupOption.type}}
+                span(class="caret ")
+            ul.dropdown-menu(uib-dropdown-menu='', role='menu', aria-labelledby='btn-append-to-single-button' ng-if="!(dropdownDisable === true)")
+                li(role='menuitem' ng-repeat="option in dropDownOptions.tableOptions" ng-click="filterUpdate(option)")
+                    a(ng-if= " (option.srefValue.obj != undefined ||  option.srefValue.obj != null) && option.srefValue != 'href' ") {{option.type}}
+                    a(ng-if= " option.srefValue == 'href' " href='#') {{option.type}}
+                    a(ng-if= " option.srefValue == null || option.srefValue == undefined ") {{option.type}}
+       

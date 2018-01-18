@@ -1,0 +1,29 @@
+.loading-state-con {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1005;
+    @include transition(all 1s ease-in-out);
+}
+.loading-state {
+    display: table;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+.loading-state-wrp{
+	width: 100%;
+	height: 100%;
+	display: table-cell;
+	vertical-align: middle;
+	background-color: #ffffff;
+
+	.gif-wrp img {
+		// width: 100px;
+    	// height: 100px;
+        width: 14vh;
+        height: 14vh;
+	}
+}

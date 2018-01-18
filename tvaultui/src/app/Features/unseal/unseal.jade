@@ -1,0 +1,63 @@
+header.unseal
+sideBar
+script(type='text/ng-template', id='error.html')
+    .row
+        .top-lg-sep
+            .common-header-label.text-center Error
+        .top-lg-sep.notification-text {{errorMessage}}
+    
+    .text-center.bottom-lg-sep.top-lg-sep.notification-button
+        .clearfix.bottom-sm-sep
+            button.link-style.common-btn.btn.btn-primary.btn-lg(ng-click="close()") Close
+        
+.container-fluid.unseal
+    .container-fluid-wrapper.curved
+        .common-main-content.text-center
+            .unseal-content-wrapper
+                .safe-detail-container-block
+                    .safe-img-container
+                        img(src="../assets/images/safe_icon.png")
+                    .font-type-normal Minimum 3 users with keys are required to unseal the vault. If you are one of the users with a key, enter the IP address of the vault and your key to unseal the vault.
+                .details-input-group
+                    .common-form-label Server IP Address
+                    input.form-control.input-box-style(ng-model="payload.serverip" name="serverip" type="text" placeholder="12.345.67.890" required)
+                .button-container
+                    button.link-style.common-btn.btn.btn-primary.btn-lg(type='button' ng-click="checkUnsealProgress()") View Status
+                loading-state(ng-if="isLoadingData")
+                .unseal-status-wrapper(ng-if='showProgress')
+                    .unseal-progress-wrapper
+                        .unseal-progress-bar
+                        .unseal-progress-marker
+                            .progress-dot-wrapper
+                                .progress-dot(ng-class="{active: progress < 1, checked: progress >= 1}")
+                                    .checkmark
+                            .unseal-user USER 1
+                            .unseal-status(ng-if="progress < 1") key needed
+                            .unseal-status(ng-if="progress >= 1") key accepted
+                        .unseal-progress-marker
+                            .progress-dot-wrapper
+                                .progress-dot(ng-class="{active: progress == 1, checked: progress >= 2, inactive: progress < 1}")
+                                    .checkmark
+                            .unseal-user USER 2
+                            .unseal-status(ng-if="progress < 2") key needed
+                            .unseal-status(ng-if="progress >= 2") key accepted
+                        .unseal-progress-marker
+                            .progress-dot-wrapper
+                                .progress-dot(ng-class="{active: progress == 2, checked: progress >= 3, inactive: progress < 2}")
+                                    .checkmark
+                            .unseal-user USER 3
+                            .unseal-status(ng-if="progress < 3") key needed
+                            .unseal-status(ng-if="progress >= 3") key accepted
+                    .details-input-group(ng-if="progress < 3 && !keySubmitted")
+                        .common-form-label Key
+                        input.form-control.input-box-style(ng-model="payload.key" name="key" type="text" required)
+                    .button-container(ng-if="progress < 3 && !keySubmitted")
+                        button.link-style.common-btn.btn.btn-primary.btn-lg(type='button' ng-click="submitKey()") Unseal Vault
+                    .unseal-success-message(ng-if="progress < 3 && keySubmitted")
+                        h4 Your key has been entered successfully. {{ 3 - progress }} more keys are required to open the vault.
+                    .unseal-success-message(ng-if="progress === 3 && keySubmitted")
+                        h4 Success! You have unsealed the vault.
+                    .unseal-success-message(ng-if="progress === 3 && !keySubmitted")
+                        h4 This instance of vault is already unsealed!
+
+//- footer  

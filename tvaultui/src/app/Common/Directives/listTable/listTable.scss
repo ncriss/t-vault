@@ -1,0 +1,299 @@
+.icon-eye:before {
+  content: "\e91b";
+}
+.icon-views:before {
+  content: "\e91b";
+}
+.icon-folder:before {
+  content: "\e92f";
+}
+.icon-mode_edit:before {
+  content: "\e91e";
+}
+.icon-folder-open:before {
+  content: "\e930";
+}
+.icon-content_copy:before {
+  content: "\e91c";
+}
+.icon-delete:before {
+  content: "\e91d";
+}
+.list-icon {
+    color: #ed0295;
+    font-size: $icon-font-size;
+}
+.list-icon.folder {
+    padding: 0 15px 0 0;
+}
+.down{
+    display: inline-block;
+    height: 4rem;
+    width: initial !important;
+}
+.down .list-icon {
+    display: inline-block;
+    float: left;
+    padding: 0.7rem 1rem;
+}
+.table-container {
+    height: calc(100% - 6rem);
+}
+.table-container .row {
+    padding: 0rem !important;
+}
+.table-header {
+    padding: 15px 0;
+}
+.table-header .cell {
+    font-weight: lighter;
+    font-family: montserrat;
+}
+.accordion-table-data .cell.block-1 {
+    padding-left: 0rem;
+    padding-right: 0rem;
+}
+.accordion-table-data .cell{
+    color: #e20d95 !important;
+}
+.accordion-expand-block .folder-keys {
+    padding: 1vh 0;
+}
+.accordion-expand-block .extra-actions {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    left: 0;
+    border-top: 1px solid #dddddd;
+    padding: $label-input-padding;
+}
+.accordion-table-data .accordion-expand-block .folder-key-input {
+    max-width: 100%;
+}
+.accordion-table-data .accordion-expand-block .folder-key-input input {
+    height: 4.2vh;
+    font-size: 1.5vh;
+    //border: 0px !important;
+}
+.accordion-table-data .accordion-expand-block .folder-key-input .input-icon {
+  position:absolute;
+  color: #777777;
+  top: 1.2vh;
+  right: 1vw;
+  font-size: 2vh;
+  pointer-events: none;
+}
+.accordion-table-data .accordion-expand-block .block-1 {
+    color: #777777;
+    font-weight: bold;
+    max-width: 25%;
+    height: 100%;
+    padding: 1vh 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-family: montserratbold;
+}
+.folder-keys .row {
+    height: 4.2vh;
+}
+.accordion-table-data .accordion-expand-block .block-2 {
+    padding: 0;
+}
+.accordion-expand-block .button-container {
+    display: inline-block;
+    float: right;
+}
+.accordion-expand-block .btn {
+    // font-size: 16px;
+    font-size: 2vh;
+    border-radius: 0.3vh;
+    font-weight: bolder;
+    font-family:montserratbold;
+    /*padding: 0.8rem 2rem; Not required
+    margin: 0 0.5rem; */
+}
+.accordion-expand-block .btn-default {
+  margin-left: 2vw !important;
+}
+.accordion-expand-block .function-text {
+    font-size: 1.5vh;
+}
+.accordion-expand-block .create-folder-container {
+    width: auto;
+    font-size:14px;
+    /*margin: 1rem 0 0 0; not required */
+    text-align: left;
+    /*height: 5rem; not required */
+    float: left;
+    display: inline-block;
+    font-family: montserratlight;
+    .editColor {
+      -webkit-text-stroke: 1px white;
+    }
+}
+.accordion-table-data .accordion-expand-block {
+    /*background : #f6f6f6; This background is not required */
+    height: 0;
+    overflow: hidden;
+    border-bottom : 1px solid #f9f9f9;
+    padding: 0 8%;
+    @include transition(.3s ease-in-out height);
+}
+.accordion-expand-block .btn-default {
+    background: transparent;
+}
+.accordion-expand-block .btn-default:hover {
+    background: transparent;
+}
+.accordion-expand-block .btn-default:active {
+    background: transparent !important;
+}
+.accordion-expand-block .btn-default:focus {
+    background: transparent !important;
+}
+.accordion-table-data-container {
+    position: relative;
+    overflow-y: auto;
+    height: calc(100% - 6rem);
+}
+.accordion-table-data .accordian-list-item {
+    height : auto;
+    cursor: pointer;
+    position: relative;
+    li:hover{
+        background-color: $table-row-hover;
+    }
+}
+.accordion-table-data .accordion-list-main {
+    border-bottom : 1px solid #ddd;
+}
+.accordion-table-data .accordian-list-item {
+    @include transition(.0s ease-in-out background-color);
+}
+.accordion-table-data .accordian-list-item:hover {
+    background-color: #fafafa;
+}
+.accordion-list-main .list-icon.icon-delete,
+.accordion-list-main .list-icon.icon-mode_edit {
+    display: inline-block;
+    position: relative;
+    padding-right: 1vw;
+}
+
+.bottom-lg-sep button.btn-lg {
+  border-radius: 0.5vh;
+}
+.accordion-expand-block .button-container button {
+    // width: 12rem;
+    width: 7vw;
+    height: 5vh;
+    @media #{$small-only}{
+      width: initial;
+      margin-bottom: 2vh !important;
+      }
+}
+form.folder-wrapper {
+    position: relative;
+    height: 100%;
+    padding: 1vh 0;
+    @include transition(all 1s ease-in-out);
+}
+form.folder-wrapper .unavailable-text {
+    font-size: 2vh;
+    padding: 3vh 0;
+}
+form.folder-wrapper .loading-state-wrp {
+  /*background-color: #f6f6f6; loading background not required for list table*/
+}
+
+/* Secrets accordion animation */
+.accordion-table-data .accordion-expand-block.open-accordion{
+    height: 35vh;
+    border: 1px #f6f6f6 solid;
+    background-color: #fdfdfd;
+}
+.accordion-list-main{
+    height: 7vh;
+}
+.accordion-list-wrapper{
+    width:100%;
+    height:100%;
+    display:table;
+    table-layout: fixed;
+}
+.column-value-wrapper{
+    display:table-cell;
+    vertical-align: middle;
+    float:none !important;
+}
+.accordion-expand-block .down {
+    height: 4.2vh;
+  width: initial !important;
+}
+.accordion-expand-block .down .list-icon {
+    font-size: $icon-font-size;
+    padding: 0.7vh 1vw;
+}
+button:disabled {
+  cursor: default !important;
+}
+.table-first-cell{
+    padding-left: $text-padding-left !important;
+}
+.create-folder-container .function-text.link-style:hover {
+    .action-icon-wrapper,
+    .create-link {
+        color: $brand-hover !important;
+    }
+}
+.folder-keys .function-text {
+    height: 4vh;
+    padding: 0;
+}
+.folder-keys .function-text .text{
+    white-space: nowrap;
+    display: flex;
+    height: 100%;
+    padding-left: 0.5vw;
+    flex-direction: column;
+    justify-content: center;
+}
+.folder-keys .add-icon-container {
+    float: left;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.folder-wrapper .folder-keys .key {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.secrets-accordion-wrapper{
+    height: 70%;
+    overflow-y: auto;
+    padding-bottom: 1%;
+}
+.key-input-box{
+    //border-right: 0 !important;
+    width: 90%;
+}
+.cell.folder-key-input {
+    //border: 1px solid #ccc;
+    background: #fdfdfd;
+    z-index: 10;
+}
+.cell.folder-key-input .list-icon.icon-views {
+    position: absolute;
+    color: #666 !important;
+    display: inline-block;
+    top: 1.2vh;
+    font-size: 2vh;
+    right: 1vw;
+}

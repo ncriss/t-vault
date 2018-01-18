@@ -1,0 +1,67 @@
+//  Radio buttons
+
+md-radio-button .md-container .md-ripple-container {
+    display: none !important;
+}
+
+md-radio-button.md-default-theme.md-checked .md-off, 
+md-radio-button.md-checked .md-off {
+    border-color: rgba(0, 0, 0, 0.2);               // Edit the opacity to make the outer ring dark or light
+}
+
+md-radio-button.md-default-theme .md-off, 
+md-radio-button .md-off {
+    border-color: rgba(0, 0, 0, 0.2);               // Edit the opacity to make the outer ring dark or light
+}
+
+md-radio-button.md-default-theme .md-on, 
+md-radio-button .md-on {
+    background-color: $brand-primary;
+}
+.inactive md-radio-button.md-default-theme .md-on, 
+.inactive md-radio-button .md-on {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+md-radio-button .md-off {
+    border-width: 1px !important;
+}
+md-radio-button .md-label {
+    // margin-left: 2vw;
+    margin-left: 1vw;
+    padding-top: 0.4vh;
+}
+md-radio-button .md-label,
+md-radio-button .md-label.inactive {
+  color: #333 !important;
+  font-weight: bold;
+  font-size: 1.4vh;
+  letter-spacing: 0.05rem;
+  display: inline-block;
+  height: 100%;
+}
+md-radio-button .md-container {
+    // top: 60% !important;
+    top: 50% !important;
+    transform: translate(0, -50%);
+    width: 2.5vh;
+    height:2.5vh;
+    position: relative;
+}
+md-radio-button .md-on,
+md-radio-button .md-off {
+    width: 100%;
+    height: 100%;
+}
+md-radio-group md-radio-button {
+    text-transform: uppercase;
+}
+md-radio-button .md-off {
+    border-color: #ccc !important;
+}
+md-radio-group md-radio-button:hover {
+    .md-off {
+        border-color: #777 !important;
+    }
+}
+//--------------------------------------------------//

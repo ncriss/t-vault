@@ -1,0 +1,355 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../assets/fonts/Montserrat-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratBold';
+    src: url('../assets/fonts/Montserrat-Bold.ttf') format('truetype');   
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratBlack';
+    src: url('../assets/fonts/Montserrat-Black.ttf') format('truetype');  
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratHairline';
+    src: url('../assets/fonts/Montserrat-Hairline.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal; 
+}
+@font-face {
+    font-family: 'montserratLight';
+    src: url('../assets/fonts/Montserrat-Light.ttf') format('truetype');  
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratUltraLight';
+    src: url('../assets/fonts/Montserrat-UltraLight.ttf') format('truetype');  
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratSemiBold';
+    src: url('../assets/fonts/Montserrat-SemiBold.ttf') format('truetype');  
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratExtraBold';
+    src: url('../assets/fonts/Montserrat-ExtraBold.ttf') format('truetype');  
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratRegular';
+    src: url('../assets/fonts/Montserrat-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../assets/fonts/Montserrat-Regular.eot') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratBold';
+    src: url('../assets/fonts/Montserrat-Bold.eot') format('truetype');   
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratBlack';
+    src: url('../assets/fonts/Montserrat-Black.eot') format('truetype');  
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratHairline';
+    src: url('../assets/fonts/Montserrat-Hairline.eot') format('truetype'); 
+    font-weight: normal;
+    font-style: normal; 
+}
+@font-face {
+    font-family: 'montserratLight';
+    src: url('../assets/fonts/Montserrat-Light.eot') format('truetype');  
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratUltraLight';
+    src: url('../assets/fonts/Montserrat-UltraLight.eot') format('truetype');  
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratSemiBold';
+    src: url('../assets/fonts/Montserrat-SemiBold.eot') format('truetype');  
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratExtraBold';
+    src: url('../assets/fonts/Montserrat-ExtraBold.eot') format('truetype');  
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratRegular';
+    src: url('../assets/fonts/Montserrat-Regular.eot') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../assets/fonts/Montserrat-Regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratBold';
+    src: url('../assets/fonts/Montserrat-Bold.otf') format('truetype');   
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratBlack';
+    src: url('../assets/fonts/Montserrat-Black.otf') format('truetype');  
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratHairline';
+    src: url('../assets/fonts/Montserrat-Hairline.otf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal; 
+}
+@font-face {
+    font-family: 'montserratLight';
+    src: url('../assets/fonts/Montserrat-Light.otf') format('truetype');  
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratUltraLight';
+    src: url('../assets/fonts/Montserrat-UltraLight.otf') format('truetype');  
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratSemiBold';
+    src: url('../assets/fonts/Montserrat-SemiBold.otf') format('truetype');  
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratExtraBold';
+    src: url('../assets/fonts/Montserrat-ExtraBold.otf') format('truetype');  
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratRegular';
+    src: url('../assets/fonts/Montserrat-Regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../assets/fonts/Montserrat-Regular.woff') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratBold';
+    src: url('../assets/fonts/Montserrat-Bold.woff') format('truetype');   
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratBlack';
+    src: url('../assets/fonts/Montserrat-Black.woff') format('truetype');  
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratHairline';
+    src: url('../assets/fonts/Montserrat-Hairline.woff') format('truetype'); 
+    font-weight: normal;
+    font-style: normal; 
+}
+@font-face {
+    font-family: 'montserratLight';
+    src: url('../assets/fonts/Montserrat-Light.woff') format('truetype');  
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratUltraLight';
+    src: url('../assets/fonts/Montserrat-UltraLight.woff') format('truetype');  
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratSemiBold';
+    src: url('../assets/fonts/Montserrat-SemiBold.woff') format('truetype');  
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratExtraBold';
+    src: url('../assets/fonts/Montserrat-ExtraBold.woff') format('truetype');  
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratRegular';
+    src: url('../assets/fonts/Montserrat-Regular.woff') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'videogular';
+    src: url('../assets/fonts/videogular.ttf') format('truetype');   
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'videogular';
+    src: url('../assets/fonts/videogular.woff') format('truetype');   
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'videogular';
+    src: url('../assets/fonts/videogular.eot') format('truetype');   
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'videogular';
+    src: url('../assets/fonts/videogular.otf') format('truetype');   
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'icomoon';
+    src:    url('../assets/fonts/icomoon.eot?nv85y7');
+    src:    url('../assets/fonts/icomoon.eot?nv85y7#iefix') format('embedded-opentype'),
+        url('../assets/fonts/icomoon.ttf?nv85y7') format('truetype'),
+        url('../assets/fonts/icomoon.woff?nv85y7') format('woff'),
+        url('../assets/fonts/icomoon.svg?nv85y7#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-icon-expand:before {
+  content: "\e918";
+}
+.icon-icon-filter-arrow:before {
+  content: "\e919";
+}
+.icon-icon-minize:before {
+  content: "\e91a";
+}
+.icon-selected:before {
+  content: "\e915";
+}
+.icon-unselected:before {
+  content: "\e916";
+}
+.icon-dropdown:before {
+  content: "\e917";
+}
+.icon-date_picker:before {
+  content: "\e914";
+}
+.icon-close .path1:before {
+  content: "\e90e";
+  color: rgb(85, 85, 85);
+}
+.icon-close .path2:before {
+  content: "\e90f";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-download:before {
+  content: "\e910";
+}
+.icon-filter_magenta:before {
+  content: "\e911";
+}
+.icon-filter:before {
+  content: "\e912";
+}
+.icon-share:before {
+  content: "\e913";
+}
+.icon-down_triangle:before {
+  content: "\e90b";
+}
+.icon-pacman_logo:before {
+  content: "\e90c";
+}
+.icon-search:before {
+  content: "\e90d";
+}
+.icon-Cloud-Copy:before {
+  content: "\e90a";
+}
+.icon-Alert:before {
+  content: "\e900";
+}
+.icon-Apps:before {
+  content: "\e901";
+}
+.icon-cog:before {
+  content: "\e994";
+}
+.icon-earth:before {
+  content: "\e9ca";
+}
+.icon-Compliance:before {
+  content: "\e902";
+}
+.icon-Cost:before {
+  content: "\e903";
+}
+.icon-Inventory:before {
+  content: "\e904";
+}
+.icon-Monitering:before {
+  content: "\e905";
+}
+.icon-PACman:before {
+  content: "\e906";
+}
+.icon-Profile:before {
+  content: "\e907";
+}
+.icon-Storage:before {
+  content: "\e908";
+}
+.icon-Utilization:before {
+  content: "\e909";
+}

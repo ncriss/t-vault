@@ -1,0 +1,49 @@
+.inner-first-wrap.table-cell(ng-class='{"expand" : parentObj.isTimeFilterActive}' ng-click='parentObj.isTimeFilterActive = !parentObj.isTimeFilterActive')
+    .inner-select-option.inline-block.clearfix
+        span.select-label.left {{modelData.selectedLabelText}}
+        span.arrow-down.right
+.filter-option-con.absolute.pane-child-third-top-select(ng-class='{"expand" : parentObj.isTimeFilterActive}' ng-click='parentObj.isTimeFilterActive = !parentObj.isTimeFilterActive')
+    .inner-first-wrap.table-cell
+        .inner-select-option.inline-block.clearfix
+            span.select-label.left {{modelData.selectedLabelText}}
+            span.arrow-down.right.rotated-arrow
+    .filter-overlay-body(ng-click='$event.stopPropagation();')
+        .filter-option-wrap
+
+            .filter-radio-first-con.cm-filter-radio-con
+
+                .filter-radio-first.filter-common-radio
+
+                    input(type='radio' id='timePeriod' value="timePeriodVal"  ng-model='parentObj.timeFilterRadioModel' ng-click = "callModel('timePeriodVal')")
+                    label.label-checkbox(for='timePeriod' ng-class='{"icon-unselected":parentObj.timeFilterRadioModel !== "timePeriodVal","icon-selected":parentObj.timeFilterRadioModel === "timePeriodVal"}') TIME PERIOD
+                .filter-radio-sibling-con.relative(ng-class="{'this-is-disabled':parentObj.timeFilterRadioModel !== 'timePeriodVal'}")
+                    .disable-wrap.absolute(ng-if="parentObj.timeFilterRadioModel !== 'timePeriodVal'")
+                    .filter-select-con(ng-init="parentObj.singleSelect = 'LAST 6 MONTHS'")
+                        ui-select(ng-model="modelData.selectedItem" ng-change='dateSelectBoxChanged();')
+                            ui-select-match
+                                span(ng-bind="$select.selected.name")
+                            ui-select-choices(repeat = "item in itemArray track by item.id")
+                                span(ng-bind="item.name")
+                              
+            .filter-radio-bottom-con.cm-filter-radio-con
+                .filter-radio-second.filter-common-radio
+                    input(type="radio" id='dateRange' value="dateRangeVal" ng-model='parentObj.timeFilterRadioModel'  ng-click = "callModel('dateRangeVal')")
+
+                    label.label-checkbox(for='dateRange' ng-class='{"icon-unselected":parentObj.timeFilterRadioModel !== "dateRangeVal","icon-selected":parentObj.timeFilterRadioModel === "dateRangeVal"}') DATE RANGE
+                .filter-radio-sibling-con.relative(ng-class="{'this-is-disabled':parentObj.timeFilterRadioModel !== 'dateRangeVal'}")
+                    .disable-wrap.absolute(ng-if="parentObj.timeFilterRadioModel !== 'dateRangeVal'")
+                    .filter-date-input-con.first
+                        .filter-date-input-label FROM
+                        .filter-cm-date-input-wrap.relative
+                            input(type="text",dategetter,ng-model="modelData.createdDate" placeholder='From' ng-change='fromDateInputChanged(modelData.createdDate);').createdDate.from-date-input
+                            .date-icon-input.absolute
+                                span.icon-date_picker
+                    .filter-date-input-con.second
+                        .filter-date-input-label TO
+                        .filter-cm-date-input-wrap.relative
+                            input(type="text",dategetter,ng-model="modelData.endDate" placeholder='To' ng-change='toDateInputChanged(modelData.endDate);').createdDate.to-date-input
+                            .date-icon-input.absolute
+                                span.icon-date_picker
+        .filter-bottom-btn-con.absolute(ng-class="{'is-active': (isSelectionMade && selectedLabelValue)}")
+            .filter-bottom-btn-wrp(ng-click='triggerTimeFiltering();')
+                .filter-bottom-btn-text.table-cell APPLY

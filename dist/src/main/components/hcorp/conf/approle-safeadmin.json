@@ -1,0 +1,10 @@
+{
+      "name": "approle-safeadmin",
+      "path":{
+  	  "auth/approle/*":{"policy":"write"},
+      "metadata/*":{"policy":"write"},
+  		"users/*":{"capabilities":["create","update","delete","list"]},
+  		"apps/*":{"capabilities":["create","update","delete","list"]},
+  		"shared/*":{"capabilities":["create","update","delete","list"]}
+  	  }
+}

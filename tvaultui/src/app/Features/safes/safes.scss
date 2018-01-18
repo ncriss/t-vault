@@ -1,0 +1,188 @@
+.table-header {
+    /*height: 4rem; Not required */
+    padding: 0rem;
+    border-bottom: 1px solid #ccc;
+}
+.function-text {
+    /*height: 4rem; Default height is not required */
+    color: $brand-primary;
+    margin-right: 0%;
+    text-align: left;
+    padding: 1rem 0rem 1rem 0rem;
+}
+.function-text .static {
+    // padding: 0.3vh $icon-action-link-padding 0.3vh 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.create-folder-container {
+    /*height: 8rem; This height is not required*/
+    display: inline-block;
+    /*margin-bottom: 1rem; Not required */
+    font-size: 18px;
+    width: 100%;
+}
+.create-folder-container .sub-header {
+    padding: 1vh 0 3vh 30px;
+    // font-size: 1.5rem;
+    font-size: 1.8vh;
+    color: #000000;
+}
+.row {
+    margin: 0 !important;
+}
+
+form.modal-wrapper .modal-body {
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.modal-header.create-folder {
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.modal-header.create-folder .modal-title {
+    color: $brand-primary;
+    letter-spacing: 0.01rem;
+}
+
+// .common-main-content .page-content-container {
+//   height: calc(100vh - 30rem) !important;
+//   overflow: auto;
+// }
+.border-left {
+  border-left: 1px solid $border_color_light_grey;
+}
+.details-input-group {
+  width : 100%;
+}
+.btn-section{
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  right: 0;
+  box-shadow: inset 0px 0px 0px 0px #dcdcdc, 0px -5px 3px -1px #ececec;
+  background: #fff;
+}
+.common-form .common-form-row {
+//   padding-bottom: 1rem;
+  padding-bottom: 1.3vh;
+}
+
+#aws {
+  padding-bottom : 3px;
+}
+#full-height {
+  height : 100%;
+}
+#folderName {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+///------------------------////
+.cell .dropdown-menu{
+    min-width: 13.2rem !important;
+}
+
+.action-width-safes{
+    max-width: 130px;
+    float: right !important;
+    padding: 0 !important;
+}
+.safes .md-content-wrapper {
+    height: 100% !important;
+}
+div[md-tabs-template] {
+    height: 100% !important;
+}
+.slider-block {
+    position: absolute;
+    width: 98%;
+    background: #fff;
+    transform: translate(102%, 0%);
+    /*transition: transform 0.3s; Creating jerk, not required */
+}
+.slide-left-parent {
+    transform: translate(-120%, 0%);
+    transition: transform 0.3s;
+}
+.slide-left {
+    height: calc(100% - 32px);    // To avoid scroll bar because of padding in the parent md-content container
+    transform: translate(0%, 0%);
+    /*transition: transform 0.3s; Creating jerk, not required */
+}
+.slider-block .table-header {
+    /*padding: 0 7.7% !important; Not required */
+}
+.slider-block .page-content-container {
+    height: 100% !important;
+}
+.slider-block .table-header .cell.block-1 {
+    padding: 0 15px
+}
+.slider-block .accordion-table-data .cell.block-1 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.slider-block .accordion-table-data .accordion-list-main {
+    /*padding: 0 8%; Not required */
+}
+.slide-header {
+    color: $brand-primary;
+    /*margin-bottom: 1rem; Not required */
+}
+.slide-header .rotate {
+   // transform: rotateZ(0deg);
+}
+.slide-header .function-text {
+    padding: 0.5rem 0rem;
+    color: $gray-dark !important;
+    display: inline-block;
+}
+.slide-header .function-text .editColor.left.static {
+    padding-top:0.4vh;
+    padding-bottom: 0.4vh;
+}
+.slide-header .option.right {
+    padding-right: 0.5rem;
+}
+.create-folder-container.slide-header .static span {
+    font-size: 2.5vh;
+}
+.editColor.right img {
+    width: 4.5vh;
+    height: 3.7vh;
+}
+.slider-block .slide-left listtable {
+    height: 75%;
+    display:block;
+    padding-top: 2vh;
+}
+img.safe-image {
+  padding-left: 1.5rem;
+}
+.table-cell-middle{
+  display:table-cell;
+  vertical-align: middle;
+  float: none !important;
+}
+
+@media #{$small-only} {
+   .cell.pink-text.col-lg-5.col-md-5.col-sm-5.col-xs-5.column-value-wrapper {
+     padding-left: 4vh !important;
+   }
+}
+.createFolder .common-header-lable {
+    letter-spacing: 0.01vw;
+}
+.modal-content .createFolder .modal-inner-wrapper {
+    padding: 0 3vw 3vh !important;
+}
+form.createFolder {
+    padding-top: 4vh;
+}
+.modal-content .createFolder .text-center.bottom-lg-sep.modal-sep.aws button {
+    width: 8vw;
+}

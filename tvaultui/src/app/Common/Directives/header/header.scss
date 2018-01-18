@@ -1,0 +1,169 @@
+.header-container {
+    //@include safe-rem(height, 56);
+    color: white;
+    max-width: 100% !important;
+    font-family: Montserrat;
+    //height: 5rem;
+    height: 100%
+}
+.header-content {
+    height: 100%;
+}
+.icon-user:before {
+  content: "\e91f";
+}
+.user-profile {
+    font-size: 3vh;
+    right: 1.5vw;
+    top: 2vh;
+    position: absolute;
+    cursor: pointer;
+}
+.user-profile img {
+    border-radius: 50%;
+    width: 2.1vw;
+    height: 2vw;
+}
+.user-profile ul.profile-options-wrapper {
+    width: 9vw;
+    position: absolute;
+    right: -1vw;
+    top : 6vh;
+    background: #eee;
+    z-index: 100;
+    border-radius: 0.5vh;
+}
+.user-profile ul::before {
+    content: "";
+    height: 0;
+    width: 0;
+    top: -2vh;
+    right: 1.5vw;
+    position: absolute;
+    border-right : 1vh solid transparent;
+    border-left: 1vh solid transparent;
+    border-bottom: 1vh solid #eee;
+    border-top: 1vh solid transparent;
+}
+.user-profile ul li{
+    height: 4.5vh;
+    padding: 1.3vh 1.5vw;
+    color: #333;
+    font-size: 1.5vh;
+    text-align: left;
+    font-family: montserrat;
+    border-radius: 0.5vh;
+}
+.user-profile ul li:hover {
+    background: #ddd;
+}
+.header-overlay {
+    background-color: #2a2a2a;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0.9;
+}
+li.profile-options .icon-user {
+    padding-right:0.5vw;
+}
+li.profile-options .text,
+li.profile-options .icon-user {
+    display: inline-block;
+}
+.burger-menu-con {
+    position: relative;
+    margin-left: 1%;
+    height: 100%;
+    display: table;
+    //@include safe-rem(margin-top, 30);
+}
+.bm-icon-con {
+    //@include safe-rem(width, 40);
+    width: 25px;
+    display: table-cell;
+    vertical-align: middle;
+    .bm-each-bar {
+        /*@include safe-rem(height, 5); Rem not required */
+        height: 5px;
+        margin-bottom: 4px;
+        background: #fff;
+    }
+    .bm-each-bar:last-child {
+        margin-bottom: 0px;
+    }
+}
+.header-right {
+    margin-right: 2%;
+    display: none; /* To hide the icons on header top right */
+}
+.header-right-wrap {
+    @include safe-rem(height, 56);
+    display: table-cell;
+    vertical-align: middle;
+    height: 5rem;
+    // font-size: 28px;
+    .notification-con {
+        display: inline-block;
+        @include safe-rem(font-size, 20);
+    }
+    .profile-info {
+        display: inline-block;
+        @include safe-rem(margin-left, 20);
+        @include safe-rem(font-size, 20);
+    }
+}
+.muncher-icon-con {
+    height: 100%;
+}
+.muncher-icon-wrap {
+    display: table;
+    /*height: 5rem;
+    width: 5rem; rem not required */
+    height: 100%;
+    //@include safe-rem(font-size, 46);
+    .table-cell {
+        vertical-align: middle;
+    }
+}
+.header-muncher {
+    position: absolute;
+    text-align: center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.muncher-icon{
+  background: url(../assets/images/vault.png) no-repeat 50% 50%;
+  //width: 3rem; /* Rem not required for the icon */
+    width: 4vw;
+  background-size: 65%;
+}
+.notification-icon,
+.profile-info-icon {
+    font-size: 20px;
+}
+.header-right-wrap .right-icons {
+    padding-left: 1rem;
+}
+@media #{$small-only} {
+    .user-profile ul.profile-options-wrapper {
+        width: 20vw;
+    }
+    .user-profile ul li {
+        padding: 1.3vh 2.5vw;
+    }
+    .muncher-icon {
+        width: 12vw;
+    }
+    .user-profile {
+        top: 20%;
+    }
+    .user-profile img {
+        width: 6.1vw;
+        height: 6vw;
+    }
+}

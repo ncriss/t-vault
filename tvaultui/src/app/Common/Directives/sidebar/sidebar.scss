@@ -1,0 +1,10 @@
+.sidebar-container {
+    position: absolute;
+    background: #2a2a2a;
+    top: 5rem;
+    left: 0rem;
+    height: calc(100% - 5rem);
+    width: 5rem;
+    box-shadow: 0 0 6px 1px #2a2a2a;
+    display: none; /* Hiding it as it is not required now. The directive is added in all htmls. */
+}

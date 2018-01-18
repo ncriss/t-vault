@@ -1,0 +1,131 @@
+.admin.new-container.page-content-container {
+    height: calc(100% - 6vh) !important;
+    clear:both;
+}
+.page-header-container.admin {
+    box-shadow: none !important;
+}
+.static .middle-block {
+    padding-left: 0;
+}
+.admin .md-content-inner-wrapper {
+    height: 100%;
+    position: relative;
+}
+.left-block{
+    display: inline-block;
+}
+.right-block{
+    float: right;
+}
+
+.row{
+    margin: 0 !important;
+}
+.compressed-table {
+    margin: auto;
+    height: 100% !important;
+}
+.admin.slim-container {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    padding: $gutterspace-top-bottom;
+}
+.admin.slim-container .dropdown-wrapper {
+    // width: 25rem;
+    width: 17vw;
+}
+.admin.slim-container .right {
+    padding-left: 2rem;
+}
+.admin.slim-container .dropdown-wrapper,
+.admin.slim-container .right {
+    position: relative;
+}
+.action-width{
+  max-width: 155px;
+  float: right !important;
+}
+.tiles-division-title {
+    font-size: 1.8vh;
+    padding-bottom: 0.7vh;
+    border-bottom: 1px solid #333;
+}
+.tiles-division-container .tiles-wrapper {
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
+.admin .table-container {
+    height: calc(100%) !important;
+}
+.admin .pink-text {
+    color: $gray-dark !important;
+}
+.tiles-container-block .tile-label.edit-icon,
+.tiles-container-block .tile-label.delete-icon{
+    top: 35px;
+    font-size: 20px;
+    width: auto;
+    cursor:pointer;
+}
+.tiles-container-block .tile-label.edit-icon {
+//    right: 62px;
+    position: absolute;
+    top: 10%;
+    text-align: right;
+    width: 44%;
+}
+
+.tiles-container-block .tile-label.delete-icon {
+    // right: 30px;
+    position: absolute;
+    top: 10%;
+    text-align: right;
+    width: 69%;
+}
+.tiles-container-block img,
+.tiles-wrapper .row{
+    cursor: default;
+}
+
+.page-content-container .md-content-inner-wrapper{
+    // max-width: 968px;
+    // width:100%;
+    width: 80vw;
+    margin: 0 auto;
+}
+.admin.new-container.page-content-container .compressed-table .accordian-list-item,
+.admin.new-container.page-content-container .compressed-table .accordian-list-main div {
+    cursor: none !important;
+}
+.admin .compressed-table .accordian-list-item .list-icon::before {
+    cursor: pointer !important;
+}
+.admin .compressed-table [role="button"] {
+    cursor: default !important;
+}
+.admin.slim-container .view-controller-img img {
+    height: 4.2vh;
+    width: 6vw;
+}
+.admin.slim-container .function-text {
+    padding: 0.8vh 0;
+}
+.admin .accordion-table-data .cell {
+    color: #333 !important;
+}
+
+@media #{$small-only}{
+  .admin.slim-container .dropdown-wrapper {
+    width: 70%;
+  }
+  .admin.slim-container .view-controller-img img {
+    height: initial;
+    width: initial;
+    margin-top: 1px;
+  }
+  .admin.slim-container .right {
+    padding-top: 0;
+  }
+}

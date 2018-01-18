@@ -1,0 +1,154 @@
+.tiles-wrapper {
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+}
+.tiles-wrapper ul {
+    padding: 0rem !important;
+}
+.tiles-wrapper ul li {
+    // width: 24%;
+    width: auto;
+    height: auto;
+    padding: 1.5vw 2.5vw;
+}
+
+.tiles-container-block {
+    height: 160px; /* Fixing the tile container width and height */
+    width: 160px;
+    height: 10.8vw;
+    width: 10.8vw;
+    margin: auto;
+    border-radius: 0.5vh;
+    position: relative;
+    @include transition(all 0.5s ease-in-out);
+}
+.tiles-container-block img{
+   margin: 0%;
+   width: 100%;
+   height: 100%;
+}
+
+.tiles-container{
+    margin: 0;
+    margin-bottom: 0;
+}
+
+.tiles-container .clickable {
+    cursor: pointer !important;
+}
+
+.tiles-container-block .tile-label {
+    position: absolute;
+    color: $base-color-dark;
+    font-weight: bold;
+    bottom: 0%;
+    left: 50%;
+    overflow: hidden;
+    text-align: center;
+    width: 80%;
+    height: 25%;
+    text-overflow: ellipsis;
+    transform: translate(-50%,-20%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // font-size: $base-font-size-medium;
+    font-size: 0.9vw;
+}
+
+.center-display {
+    display: flex !important;
+    justify-content: space-around !important;
+}
+
+@media only screen and (max-width: 426px){
+    .tiles-container {
+      // padding: 0 5px !important;
+    }
+    .tiles-wrapper ul {
+      text-align: center;
+    }
+    .tiles-wrapper ul li {
+      display: inline-block;
+      float: none;
+  }
+}
+.tile-image-wrapper {
+    background: url('/assets/images/safe_tile.png') no-repeat;
+    width: 50%;
+    height: 50%;
+    background-size: cover;
+    position: absolute;
+    @include translate(50%, 30%);
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+.tiles-container-block.safe-parent:hover {
+    background-color: $base-color;
+    .tile-image-wrapper {
+        background: url('/assets/images/safe_tile_hover.png') no-repeat;
+        background-size: cover;
+    }
+    .tile-label {
+        color: $base-color-dark-background;
+    }
+}
+.admin-tile-overlay {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height:100%;
+    background: #fff;
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 0.5vh;
+    @include transition(0.3s ease-in-out opacity);
+    @include transition(0.3s ease-in-out background);
+    color: $base-color-dark-background;
+}
+.tiles-container-block.admin-parent:hover{
+    .admin-tile-overlay{
+        // display: block;
+        pointer-events: initial;
+        background: $hover-color;
+        opacity: 0.9;        
+    }
+}
+.modify-safe-admin-wrapper {
+    position: absolute;
+}
+.modify-safe-admin-wrapper.edit-wrapper {
+    top:30%;
+    left:50%;
+    @include translate(-50%, 0);
+}
+.modify-safe-admin-wrapper.delete-wrapper {
+    top:50%;
+    left:50%;
+    @include translate(-50%, 0);
+} 
+.modify-safe-admin-wrapper .action-icons-style {
+    font-size: 1.5vw !important;
+    padding-right: 0.7vw !important;
+}
+.modify-safe-text{
+    font-weight: 700;
+    // font-size:$base-font-size;
+    font-size: 1.1vw;
+    font-family: montserrat;
+    display: table-cell;
+    vertical-align: middle;
+}
+.modify-safe-admin-wrapper.edit-wrapper:hover {
+    color: #e20074;
+    .icon-mode_edit.action-icons-style {
+        color: #e20074;
+    }
+}
+.modify-safe-admin-wrapper.delete-wrapper:hover {
+    color: #e20074;
+    .icon-delete.action-icons-style {
+        color: #e20074;
+    }
+}

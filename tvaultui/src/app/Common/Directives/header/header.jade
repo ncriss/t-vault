@@ -1,0 +1,32 @@
+.header-container.relative
+	.header-overlay.absolute
+	.header-content.relative.clearfix
+		.burger-menu-con.left.hidden /* Hiding the burger menu, as it is not required now */
+			ul.bm-icon-con
+				li.bm-each-bar
+				li.bm-each-bar
+				li.bm-each-bar
+		.header-muncher.center-aligned
+			.muncher-icon-con.inline-block
+				.muncher-icon-wrap
+					.muncher-icon.table-cell
+		.user-profile 
+			img(ng-click="showDropdown()" src="assets/images/male-user.png")
+			
+			ul.profile-options-wrapper(ng-if="showingDropdown")
+				li.profile-options(ng-click="logout()") 
+					.icon-user 
+					.text Logout
+		.header-right.right
+			.header-right-wrap			    
+				.notification-con.relative.right-icons
+					.notification-icon.icon-Alert
+				.profile-info.right-icons
+					.profile-info-icon.icon-Profile
+				.profile-info.right-icons
+					.profile-info-icon.icon-download
+				.profile-info.right-icons
+					.profile-info-icon.icon-Alert
+
+
+

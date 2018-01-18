@@ -1,0 +1,39 @@
+//
+// Breadcrumbs
+// --------------------------------------------------
+
+
+.breadcrumb {
+  padding: 0;                                                                              //changes-over-bootstrap
+  margin-bottom: 0px; //$line-height-computed;                                             //changes-over-bootstrap
+  list-style: none;
+  background-color: $breadcrumb-bg;
+  border-radius: $border-radius-base;
+  display:inline-block;                                                                    //changes-over-bootstrap
+  font-weight: 500;                                                                        //changes-over-bootstrap
+  // font-size: 13px;                                                                      //changes-over-bootstrap
+  font-size: 1.7vh;                                                                        //changes-over-bootstrap
+                                                                  
+  span{
+    // padding: 0 $breadcrumb-padding-horizontal 0 0; //$breadcrumb-padding-vertical $breadcrumb-padding-horizontal;  
+    padding: 0 6vh 0 0;
+  }
+
+  > li {
+    display: inline-block;
+
+    + li:before {
+      // [converter] Workaround for https://github.com/sass/libsass/issues/1115
+      $nbsp: "\00a0";
+      content: "#{$breadcrumb-separator}#{$nbsp}"; // Unicode space added since inline-block means non-collapsing white-space
+      padding: 0 5px;
+      color: $breadcrumb-color;
+    }
+  }
+
+  > .active {
+    color: $breadcrumb-active-color;
+    font-weight: bold !important; //600 !important;                                        //changes-over-bootstrap     
+    font-family: montserrat !important;                                                    //changes-over-bootstrap                                                                                   
+  }
+}

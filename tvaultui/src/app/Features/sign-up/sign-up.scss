@@ -1,0 +1,135 @@
+.container-fluid-wrapper-signin{
+    max-width: 70%;
+    margin: auto;
+    background: rgba(255, 255, 255, .5);
+}
+.sign-in .loader-wrapper {
+    position: relative !important;
+    height: 35% !important;
+}
+
+.sign-in .loader-wrapper .gif-wrp {
+    width: 30% !important;
+}
+
+.form-wrapper {
+    width: 30%;
+    margin: auto;
+    height: 100%;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media (min-width : 320px) and (max-width : 480px) {
+  .form-wrapper {
+    width: 80%;
+  }
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media (min-width : 481px) and (max-width : 1024px) {
+  .form-wrapper {
+    width: 60%;
+  }
+}
+
+.form-wrapper label {
+    color: $text-color;
+}
+
+.sign-in-icon-container {
+    width: 100%;
+    height: 40%;
+}
+
+.input-fields {
+    width: 90%;
+    margin: auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.sign-in-header {
+    // font-family: $font-bold;
+    font-size : 27px;
+    // color: $gray-dark;
+    // letter-spacing: $letter-spacing;
+    text-transform: uppercase;
+
+}
+
+.sign-in-image {
+    // height: 60%;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+header.signin  .user-profile {
+    display: none;
+}
+
+.sign-in-text {
+    // color: $gray-light;
+    // font-family: $font-light;
+    font-weight: bold;
+    // font-size : $font-size-big;
+    // letter-spacing: $letter-spacing;
+}
+
+.btn-lg {
+    text-transform: uppercase;
+}
+
+.sign-in-icon-container img {
+    // transform: translate(0%, 70%);
+    display: block;
+    width: 40%;
+    margin: auto !important;
+    padding-top: 15% !important;
+}
+.sign-in-icon-container h2.center-text {
+    font-size: 26px;
+    font-weight: bold;
+    font-family: montserratbold;
+    letter-spacing: 0.01rem;
+    color: $text-color;
+}
+.sign-in-icon-container small.center-text {
+    font-weight: normal;
+    font-family: montserrat;
+    letter-spacing: 0.01rem;
+    display: inline-block;
+    padding-top: 2rem;
+}
+.login-button{
+    width: 60%;
+}
+.extra-margin-actions{
+    margin-bottom: 7vh;
+}
+@media only screen and (max-width: 751px) {
+    .container-fluid-wrapper-signin {
+        max-width: 90% !important;
+    }
+}
+.container-fluid-wrapper-signin .form-wrapper label {
+    font-size: 1.6vh;
+    margin-bottom: 1vh;
+}
+.container-fluid-wrapper-signin .form-control {
+    height: 4vh;
+    padding: 0.9vh 1.5vh;
+    font-size: 1.5vh !important;
+}
+.container-fluid-wrapper-signin .form-group {
+    margin-bottom: 3.7vh;
+}
+.container-fluid-wrapper-signin .center-text.forgot-pwd {
+    font-size: 1.5vh;
+}
+.container-fluid-wrapper-signin  .button-container {
+    margin: 1.8vh 0;
+}
+.container-fluid-wrapper-signin .login-button {
+    padding: 1.3vh 4.9vh;
+    font-size: 2vh;
+}

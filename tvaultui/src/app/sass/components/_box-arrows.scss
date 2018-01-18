@@ -1,0 +1,48 @@
+.box-arrow-left, .box-arrow-top, .box-arrow-right, .box-arrow-bottom {
+    position: relative;
+    background: #fff;
+}
+.box-arrow-left:after, .box-arrow-top:after, .box-arrow-right:after, .box-arrow-bottom:after {
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-width: 10px;
+    box-sizing: border-box;
+    border: 8px solid black;
+}
+
+.box-arrow-left:after {
+    left: 0;
+    top: 23px;
+    border-color: transparent transparent #fff #fff;
+    transform-origin: 0 0;
+    transform: rotate(45deg);
+    box-shadow: -3px 4px 9px -2px #cbd4df;
+}
+.box-arrow-top:after{
+    top: 0;
+    left: 50%;
+    border-color: transparent transparent #fff #fff;
+    transform-origin: 0 0;
+    transform: rotate(135deg);
+    box-shadow: -3px 4px 9px -2px #cbd4df;
+}
+.box-arrow-right:after {
+    right: -16px;
+    bottom: 23px;
+    border-color: transparent transparent #fff #fff;
+    transform-origin: 0 0;
+    transform: rotate(-135deg);
+    box-shadow: -3px 4px 9px -2px #cbd4df;
+}
+.box-arrow-bottom:after {
+    bottom: -16px;
+    left: 23px;
+    border-color: transparent transparent #fff #fff;
+    transform-origin: 0 0;
+    transform: rotate(-45deg);
+    box-shadow: -3px 4px 9px -2px #cbd4df;
+}

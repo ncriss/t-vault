@@ -1,0 +1,4 @@
+.radio-container 
+    md-radio-group(layout="row" ng-model="value" ng-class="{'inactive': state == false}")
+        md-radio-button(value="{{item.text}}" ng-disabled="state != true" ng-repeat="item in data.options") {{item.text}}
+    .radio-extra-functions

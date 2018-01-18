@@ -1,0 +1,45 @@
+.footer-container{
+  height: 30px;
+  //margin-top: 10px;
+  @include safe-rem(margin-top, 3);
+  position: relative;
+  display: table;
+  width: 100%;
+
+  @media #{$medium-only} {
+    @include safe-rem(margin-top, 16);
+  }
+
+  @media #{$small-only} {
+    @include safe-rem(margin-top, 16);
+  }
+  .footer-wrap {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    font-family: montserratLight;
+    font-size: 10px;
+    color: #fff;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    @media #{$medium-only} {
+      vertical-align: top;
+    }
+
+    @media #{$small-only} {
+      vertical-align: top;
+    }
+  }
+  .logo-cts{
+    height: 12px;
+    //margin-top: 5px;
+    vertical-align: middle;
+  }
+  .footer-text{
+    //padding: 5px;
+    padding-left: 5px;
+    vertical-align: middle;
+  }
+}

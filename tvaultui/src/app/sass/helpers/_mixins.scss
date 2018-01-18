@@ -1,0 +1,111 @@
+/***************************** Mixins commented because mixins with similar names exist in bootstrap theme mixins   ****************************/
+
+// @mixin background-image-gradient($angle, $colorini, $spreadini,$colorfinal, $spreadfinal) {
+//    background-image: -moz-linear-gradient($angle,$colorini $spreadini,$colorfinal $spreadfinal);
+//    background-image: -webkit-linear-gradient($angle,$colorini $spreadini,$colorfinal $spreadfinal);
+//    background-image: -ms-linear-gradient($angle,$colorini $spreadini,$colorfinal $spreadfinal);
+// }
+
+// @mixin box-shadow-inset($hor,$ver,$blur,$spread,$color) {
+// 	-webkit-box-shadow: inset $hor $ver $blur $spread $color;
+// 	-moz-box-shadow: inset $hor $ver $blur $spread $color;
+// 	box-shadow: inset $hor $ver $blur $spread $color;
+
+// }
+// @mixin box-shadow($hor,$ver,$blur,$spread,$color) {
+// 	-webkit-box-shadow: $hor $ver $blur $spread $color;
+// 	-moz-box-shadow: $hor $ver $blur $spread $color;
+// 	box-shadow:  $hor $ver $blur $spread $color;
+
+// }
+// @mixin border-radius($radius){
+//     -webkit-border-radius: $radius;
+//     -moz-border-radius: $radius;
+//     -ms-border-radius: $radius;
+//      border-radius: $radius;
+// }
+// @mixin transform($scale){
+//     -moz-transform: scale($scale);
+//     -webkit-transform: scale($scale);
+//     -o-transform: scale($scale);
+//     -ms-transform: scale($scale);
+//     transform: scale($scale)
+// }
+// @mixin opacity ( $value: 0.5 ){ 
+//     opacity: $value;
+//     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" $value * 100 ")";
+//     filter: alpha(opacity= $value * 100 );
+//     zoom: 1;
+// }
+// @mixin transition($transition-property, $transition-time, $method) {
+//     -webkit-transition: $transition-property $transition-time $method;
+//     -moz-transition: $transition-property $transition-time $method;
+//     -ms-transition: $transition-property $transition-time $method;
+//     -o-transition: $transition-property $transition-time $method;
+//     transition: $transition-property $transition-time $method;
+// }
+// @mixin cover-background($img-uri, $background-top:"center", $background-left:"center") {
+//   background: url($img-uri) no-repeat unquote($background-top) unquote($background-left) ; 
+//   -webkit-background-size: cover;
+//   -moz-background-size: cover;
+//   -o-background-size: cover;
+//   background-size: cover;  
+// }
+// @mixin vendor-prefix($name, $argument) {
+//   -webkit-#{$name}: #{$argument};
+//   -ms-#{$name}: #{$argument};
+//   -moz-#{$name}: #{$argument};
+//   -o-#{$name}: #{$argument};
+//   #{$name}: #{$argument};
+// }
+// @mixin transform($horizontal, $vertical) {
+//   -webkit-transform: translate($horizontal, $vertical);
+//    -moz-transform: translate($horizontal, $vertical); 
+//    -ms-transform: translate($horizontal, $vertical); 
+//    -o-transform: translate($horizontal, $vertical); 
+//    transform: translate($horizontal, $vertical); 
+// }
+
+
+/***************************** Mixins commented because mixins with similar names exist in bootstrap theme mixins   ****************************/
+
+
+@mixin safe-rem($property: font-size, $num: 14){
+  $valid: true;
+  @if type-of($property) != "string" {
+    @warn "property: #{$property} is not a string";
+    $valid: false;
+  }
+  @if type-of($num) != "number" {
+    @warn "num: #{$num} is not a number";
+    $valid: false;
+  }
+  @if $valid == true {
+    #{$property}: #{_strip-unit($num)}px;
+    #{$property}: #{$num/16}rem;
+  }
+}
+
+// Strips unit suffix from value
+@function _strip-unit($num) {
+  @if type-of($num) != "number" {
+    @warn "num: #{$num} is not a number";
+    @return null;
+  }
+  @return $num / ($num * 0 + 1);
+} 
+
+// Ellipsis
+@mixin multiLineEllipsis($max-width,$font-size,$lineHeight, $lineCount) {
+    display: block;
+    display: -webkit-box;
+    max-width: $max-width;
+    height: #{$lineHeight*$lineCount}px;
+    margin: 0 auto;
+    font-size: #{$font-size}px;
+    line-height: #{$lineHeight}px;
+    -webkit-line-clamp: $lineCount;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

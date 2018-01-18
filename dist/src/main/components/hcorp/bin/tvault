@@ -1,0 +1,166 @@
+#!/bin/bash
+#
+# tvault        Manage hashocorp vault
+#
+# chkconfig:   2345 92 09
+# description: Hashicorp vault
+# processname: vault
+# config: /opt/tvault/hcorp/conf
+# pidfile: /opt/tvault/consul/consul.pid
+
+
+TVHOME="/opt/tvault/hcorp"
+exe="$TVHOME/bin/vault"
+prog=${exe##*/}
+
+
+lockfile="$TVHOME/$prog.lck"
+pidfile="$TVHOME/${prog}.pid"
+logfile="/var/log/app/tvault-${prog}.log"
+sysconfig="$TVHOME/conf/$prog.conf"
+confdir="$TVHOME/conf"
+vserverconf="$confdir/server.hcl"
+
+if [[ -f $sysconfig ]]; then
+    IFS="="
+    while read -r name value
+    do
+    export $name=$value
+    done < $sysconfig
+fi
+
+
+start()
+{
+    [ -x $exe ] || exit 5
+    [ -d $confdir ] || exit 6
+
+    echo -n $"Starting $prog: "
+#    export VAULT_ADDR="https://127.0.0.1:8200"
+
+    export PATH=$PATH:$TVHOME/bin
+
+
+    touch $logfile $pidfile
+    sudo setcap cap_ipc_lock=+ep $(readlink -f $(which vault))
+    $exe server -config=$vserverconf 2>&1 >> $logfile &
+    RETVAL=$?
+
+    echo $! > $pidfile
+
+    if [ $RETVAL -eq 0 ]; then
+        touch $lockfile
+        echo "Vault started, it has to be unsealed."
+    else
+    echo "Error starting Vault"
+    fi
+
+    return $RETVAL
+}
+
+stop() {
+    echo -n $"Stopping $prog: "
+    kill -9 $(cat $pidfile) >> $logfile
+    RETVAL=$?
+    [ $RETVAL -eq 0 ] && rm -f $lockfile
+    echo "Stopped."
+    return $RETVAL
+}
+
+restart() {
+    stop
+    sleep 5s
+    start
+}
+
+reload() {
+    echo -n $"Reloading $prog: "
+    killproc -p $pidfile $exe -HUP
+    echo
+}
+
+force_reload() {
+    restart
+}
+
+rh_status() {
+    status $prog
+}
+
+rh_status_q() {
+    rh_status >/dev/null 2>&1
+}
+
+status()
+{
+    export VAULT_ADDR="https://127.0.0.1:8200"
+    $exe  status -tls-skip-verify
+}
+
+seal-status()
+{
+     export VAULT_ADDR="https://127.0.0.1:8200"
+     $exe status -tls-skip-verify | grep -i Sealed | cut -d: -f2 | tr -d ' '
+}
+unseal()
+{
+    echo  "Use the unseal page to unseal this instance of vault"
+}
+
+printheader()
+{
+    echo ""
+    echo "##########################################################################"
+    echo "# $1"
+    echo "##########################################################################"
+}
+
+status-all()
+{
+    printheader "tnginx status"
+    service tnginx status
+
+    printheader "tvaultapi status"
+    service tvaultapi status
+
+    printheader "tvault status"
+    service tvault status
+
+    
+    if [[ -f /etc/init.d/tconsul ]]; then
+
+        printheader "tconsul status"
+        service tconsul status
+    fi
+    
+
+}
+
+case "$1" in
+    start)
+        $1
+        ;;
+    stop)
+        $1
+        ;;
+    restart)
+        $1
+        ;;
+    status)
+        rh_status
+        ;;
+    unseal)
+        unseal
+        ;;
+    seal-status)
+        seal-status
+        ;;
+    status-all)
+        status-all
+        ;;
+    *)
+        echo $"Usage: $0 {start|stop|status|restart|unseal|seal-status|status-all}"
+        exit 2
+esac
+
+exit $?

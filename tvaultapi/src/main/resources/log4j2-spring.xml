@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration monitorInterval="60">
+    <Properties>
+        <Property name="TVAULT-API-LOG-PATH">/var/log/tvault</Property>
+    </Properties>
+    <Appenders>
+        <Console name="Console-Appender" target="SYSTEM_OUT">
+            <PatternLayout>
+                <pattern>
+                    [%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
+                </pattern>
+                >
+            </PatternLayout>
+        </Console>
+        <RollingFile name="App-Appender" fileName="${sys:TVAULT-API-LOG-PATH}/tvault-api-app.log" filePattern="${sys:TVAULT-API-LOG-PATH}/tvault-api-app-%i.log">
+            <PatternLayout>
+                <pattern>
+                    [%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
+                </pattern>
+            </PatternLayout>
+                        <Policies>
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="5"/>  
+        </RollingFile>
+        <RollingFile name="SpringBoot-Appender" fileName="${sys:TVAULT-API-LOG-PATH}/tvault-api-spring.log" filePattern="${sys:TVAULT-API-LOG-PATH}/tvault-api-spring-%i.log">
+            <PatternLayout>
+                <pattern>
+                    [%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
+                </pattern>
+            </PatternLayout>
+            <Policies>
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="5"/>    
+        </RollingFile>
+       <RollingFile name="api-metric-Appender" fileName="${sys:TVAULT-API-LOG-PATH}/tvault-api-auditmetric.log" filePattern="${sys:TVAULT-API-LOG-PATH}/tvault-api-auditmetric-%i.log">
+        	<PatternLayout>
+                <pattern>
+                 	%msg%n
+                </pattern>
+            </PatternLayout>
+            <Policies>
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="5"/>  
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Logger name="org.springframework.web" level="info" additivity="true">
+            <AppenderRef ref="SpringBoot-Appender" />
+        </Logger>
+        <Logger name="com.tmobile.cso.vault.api" level="debug"
+            additivity="true">
+            <AppenderRef ref="App-Appender" />
+        </Logger>
+       <Logger name="metric-logger" level="info"
+            additivity="false">
+            <AppenderRef ref="api-metric-Appender" />
+        </Logger>
+        <Root>
+            <AppenderRef ref="Console-Appender" />
+        </Root>
+    </Loggers>
+</Configuration>

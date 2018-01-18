@@ -1,0 +1,212 @@
+.dash-top-panel .filter-option-con.nav-filter-stack {
+	font-family: montserratUltraLight;
+	.filter-each-action-icon {
+		display: inline-block;
+		@include safe-rem(font-size, 10);
+	}
+	.overlay-each-list-text {
+		cursor: pointer;
+		display: inline-block;
+		width: initial;
+		font-family: montserratUltraLight;
+		@include safe-rem(margin-left, 10);
+		&.active {
+			font-family: montserratSemiBold;
+		}
+	}
+	.overlay-list-con-tier-fist {
+		@include safe-rem(padding-left, 20);
+	}
+	.overlay-list-con-tier-two {
+		@include safe-rem(padding-left, 20);
+	}
+	.overlay-list-con-tier-three {
+		@include safe-rem(padding-left, 20);
+		.cm-filter-connector {
+			top: 0;
+		}
+		.overlay-each-list-text {
+			@include safe-rem(margin-left, 25);
+		}
+	}
+	.cm-each-tier-list {
+		position: relative;
+		@include safe-rem(padding-bottom, 20);
+		@include safe-rem(font-size, 15);
+		&:last-child {
+			padding-bottom: 0;
+		}
+		&:first-child {
+			@include safe-rem(margin-top, 20);
+		}
+	}
+	.cm-filter-connector {
+		position: absolute;
+		width: 2px;
+		//top: 0;
+		@include safe-rem(top, 4);
+		bottom: 0;
+		background: $tertiary_color;
+		@include safe-rem(left, 4);
+	}
+	.cm-filter-clickable-con {
+		position: relative;
+		z-index: 1;
+	}
+}
+
+.not-in-L2 {
+	.cm-filter-connector {
+		top: 0 !important;
+	}
+	.overlay-each-list-text {
+		margin-left: 30px;
+		margin-left: 1.875rem !important;
+	}
+}
+
+.dash-top-panel .fancy-filter .filter-option-con {
+	width: auto;
+	overflow: initial;
+	background: transparent;
+	.fancy-filter-items-con {
+		@include safe-rem(height, 355);
+		overflow: auto;
+		margin-top: 5px;
+	}
+	.overlay-list-con {
+		padding-top: 0;
+		.outer-most-list {
+			margin-top: 0 !important;
+		}
+	}
+	.filter-overlay-body {
+		background: #5f5f5f;
+		margin-top: 12px;
+		@include safe-rem(height, 442);
+	}
+	.filer-overlay-search-con {
+		//padding-top: 20px;
+	}
+	.filter-overlay-right-icon-con {
+		display: table-cell;
+		color: $tertiary_color;
+		@include safe-rem(height, 46);
+		cursor: pointer;
+	}
+	.filter-overlay-body {
+		@include safe-rem(width, 280);
+	}
+	.filter-overlay-title-text-con  {
+		display: table-cell;
+		@include safe-rem(height, 46);
+	}
+	.fancy-filter-each-title {
+		display: inline-block;
+		color: $tertiary_color;
+		cursor: pointer;
+	}
+	.filter-overlay-head {
+		//width: 17.5rem;
+		@media #{$small-only} {
+			width:12.5rem;
+		}
+	}
+	.filter-overlay-head-wrap {
+		//@include safe-rem(width, 500);
+		//display: table;
+	}
+	.filter-option-head-con {
+		background: #fff;
+		box-shadow: none;
+		@include safe-rem(margin-left, 20);
+		@media #{$small-only} {
+				background: transparent;
+		}
+	}
+	.filter-header-each {
+		font-size: 1rem;
+	}
+	.filter-overlay-title-text-con {
+		@include safe-rem(padding-left, 15);
+	}
+	.ff-each-text {
+		@include safe-rem(font-size, 12);
+		font-family: montserratSemiBold;
+		vertical-align: middle;
+	}
+	.ff-each-icon  {
+		@include safe-rem(font-size, 14);
+		vertical-align: middle;
+		@include safe-rem(padding-left, 15);
+		@include safe-rem(padding-right, 15);
+		color: #000;
+	}
+	//do
+
+	@media #{$small-only} {
+		.fancy-filter-each-title {
+			display: none;
+		}
+		.fancy-filter-each-title:last-child {
+			display: block;
+		}
+	}
+
+	@media #{$medium-only} {
+		.fancy-filter-each-title {
+			display: none;
+		}
+		.fancy-filter-each-title:last-child {
+			display: block;
+		}
+	}
+
+	.fancy-filter-each-title:last-child {
+		color: #000;
+		.ff-each-icon {
+			display: none;
+		}
+		cursor: initial;
+	}
+	.each-icon {
+		cursor: pointer;
+	}
+	.filter-overlay-head-wrap {
+		//cursor: pointer;
+		//@include safe-rem(width, 230);
+	}
+}
+.disable-wrap {
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 5;
+	//cursor: not-allowed;
+}
+.this-is-disabled {
+	.disable-wrap  {
+		cursor: not-allowed;
+	}
+	&.filter-radio-sibling-con {
+		opacity: 0.4;
+	}
+}
+.createdDate {
+
+	// ---jugaad to make calender icon appear as clickable
+	position: relative;
+    z-index: 1;
+    // ---/jugaad
+    cursor: pointer;
+	background: transparent;
+	border: 1px solid white !important;
+	width:100%;
+	//border-radius: 5px;
+	margin-top: 10px;
+	height:34px;
+	@include safe-rem(padding-left, 10);
+	@include safe-rem(height, 34);
+	@include safe-rem(margin-top, 10);
+}

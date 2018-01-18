@@ -1,0 +1,109 @@
+/*
+* =========================================================================
+* Copyright 2017 T-Mobile USA, Inc.
+* 
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*    http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+* =========================================================================
+*/
+
+'use strict';
+/* Service includes all functions related to Admin Safe Management feature */
+(function(app){
+    app.service( 'AdminSafesManagement', function( ServiceEndpoint, $q, DataCache, fetchData, $rootScope, ErrorMessage ) {
+
+        return {
+            getCompleteSafesList: function(payload, url) {
+                return ServiceEndpoint.safesList.makeRequest(payload,url).then(function(response) {
+                    return response;
+                });
+            },
+            deleteSafe: function(payload, url) {
+                return ServiceEndpoint.deleteSafe.makeRequest(payload, url).then(function(response) {
+                    return response;
+                });
+            },
+            getSafeInfo: function(payload, url) {
+                return ServiceEndpoint.getSafeInfo.makeRequest(payload, url).then(function(response) {
+                    return response;
+                });
+            },
+            createSafe: function(payload, url) {
+                return ServiceEndpoint.createSafe.makeRequest(payload, url).then(function(response) {
+                    return response;
+                });
+            },
+            editSafe: function(payload, url) {
+                return ServiceEndpoint.editSafe.makeRequest(payload, url).then(function(response) {
+                    return response;
+                });
+            },
+            deleteUserPermissionFromSafe: function(payload, url) {
+                return ServiceEndpoint.deleteUserPermission.makeRequest(payload, url).then(function(response) {
+                    return response;
+                });
+            },
+            deleteGroupPermissionFromSafe: function(payload, url) {
+                return ServiceEndpoint.deleteGroupPermission.makeRequest(payload, url).then(function(response) {
+                    return response;
+                });
+            },
+            deleteAWSPermissionFromSafe: function(payload, url) {
+                return ServiceEndpoint.deleteAWSPermission.makeRequest(payload, url).then(function(response) {
+                    return response;
+                });
+            },
+            addUserPermissionForSafe: function(payload, url) {
+                return ServiceEndpoint.addUserPermission.makeRequest(payload, url).then(function(response) {
+                    return response;
+                });
+            },
+            addGroupPermissionForSafe: function(payload, url) {
+                return ServiceEndpoint.addGroupPermission.makeRequest(payload, url).then(function(response) {
+                    return response;
+                });
+            },
+            addAWSPermissionForSafe: function(payload, url) {
+                return ServiceEndpoint.addAWSPermission.makeRequest(payload, url).then(function(response) {
+                    return response;
+                });
+            },
+            getAWSConfigurationDetails: function(payload, url) {
+                return ServiceEndpoint.getAwsConfigurationDetails.makeRequest(payload, url).then(function(response) {
+                    return response;
+                });
+            }, 
+            addAWSRole: function(payload, url) {
+                return ServiceEndpoint.createAwsRole.makeRequest(payload, url).then(function(response) {
+                    return response;
+                });
+            },
+            updateAWSRole: function(payload, url) {
+                return ServiceEndpoint.updateAwsRole.makeRequest(payload, url).then(function(response) {
+                    return response;
+                });
+            },
+            getTheRightErrorMessage : function(responseObject){
+                if(responseObject.status==='500' || responseObject.statusText==='Internal Server Error'){
+                    return ErrorMessage.ERROR_NETWORK;
+                }
+                else if(responseObject.status==='404'){
+                    return ErrorMessage.ERROR_CONTENT_NOT_FOUND;    // TODO: show different messages for POST and GET methods
+                }
+                else{
+                    return ErrorMessage.ERROR_GENERAL;
+                }
+            }
+        }
+
+    } );
+})(angular.module('pacman.services.AdminSafesManagement',[]));

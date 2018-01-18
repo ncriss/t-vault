@@ -1,0 +1,65 @@
+// Button variants
+//
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// and disabled options for all buttons
+
+@mixin button-variant($color, $background, $border) {
+  color: $color;
+  background-color: $background;
+  border-color:  $background;  //$border;                         // changes-over-bootstrap 
+  border-width: 0px;
+  &:focus,
+  &.focus {
+    color: $color;
+    background-color: $background; //darken($background, 10%);    // changes-over-bootstrap 
+        border-color: $border; //darken($border, 25%);
+  }
+  &:hover {
+    color: $color;
+    background-color: #B8005E; //darken($background, 10%);      // changes-over-bootstrap
+        border-color: $border; //darken($border, 12%);            // changes-over-bootstrap
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    color: $color;
+    background-color: $background; //darken($background, 10%);    // changes-over-bootstrap 
+        border-color: $background; //darken($border, 12%);        // changes-over-bootstrap 
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: $color;
+      background-color: $background; //darken($background, 17%);  // changes-over-bootstrap 
+          border-color: $background; //darken($border, 25%);      // changes-over-bootstrap 
+    }
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus,
+    &.focus {
+      background-color: $background;
+          border-color: $background; //$border;                   // changes-over-bootstrap 
+    }
+  }
+
+  .badge {
+    color: $background;
+    background-color: $background; //$color;                      // changes-over-bootstrap 
+  }
+}
+
+// Button sizes
+@mixin button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
+  padding: $padding-vertical $padding-horizontal;
+  font-size: $font-size;
+  line-height: $line-height;
+  border-radius: $border-radius;
+}
