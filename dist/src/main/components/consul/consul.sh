@@ -9,7 +9,6 @@
 # pidfile: /opt/tvault/consul/consul.pid
 
 
-
 consulhome="/opt/tvault/consul"
 prog="consul"
 user="tvault"
