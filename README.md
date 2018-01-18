@@ -12,19 +12,29 @@ When a Safe is created, T-Vault automatically creates the paths and boilerplate 
 
 This readme file provides instructions to download, install, configure and use T-Vault API and user portal.
 
+Here is a quick demo video.
+
+
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=fv3GOiFYAt8
+" target="_blank"><img src="http://img.youtube.com/vi/fv3GOiFYAt8/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+
+
+
 # Table of Contents
 
-2. [Installation](#installation)
+1. [Installation](#installation)
     * [Installation Prerequisites](#installation-prerequisites)
     * [How to install](#installation-steps)
-3. [Configuration](#t-vault-configuration)
+2. [Configuration](#t-vault-configuration)
    * [Default Installation](#default-installation)
    * [Configuration Options](#t-vault-configuration-options)
-4. [Install in Production](#install-in-production)
+3. [Install in Production](#install-in-production)
    * [Setup](#setup)
    * [High Availability](#high-availability)
    * [Un-Sealing](#un-sealing)
-5. [License](#license)
+4. [License](#license)
 
 
 # Installation
@@ -51,7 +61,7 @@ You can build T-Vault from source using build_vault.sh. There are two packaging 
 
 #### Tar based installation
 
-* Download source code (https://github.com/tmobile/tvault).
+* Download source code (https://github.com/tmobile/t-vault).
 * Go to the parent directory of the source code tree and run the command <pre>./build_tvault.sh --build all --package tar</pre>
 * This will build both T-Vault API and user portal and generate tar file tvault_all.tar.gz
 * Run the command <pre>./install_tvault.sh</pre>to install and start T-Vault and all of the dependent services.
@@ -61,7 +71,7 @@ You can build T-Vault from source using build_vault.sh. There are two packaging 
 
 [Docker](https://www.docker.com/) needs to be installed and running before performing this.
 
-* Download source code (https://github.com/tmobile/tvault).
+* Download source code (https://github.com/tmobile/t-vault).
 * Go to the parent directory of the source code tree and run the command <pre>./build_tvault.sh --build all --package docker</pre>
 * This will build both T-Vault API and user portal and push the docker image to local docker hub
 * Run the command <pre>docker run --privileged -it -p 443:443 -p 8200:8200  your_tvault_docker_image_id /bin/bash</pre> to start cloud vault and all of the dependent services
